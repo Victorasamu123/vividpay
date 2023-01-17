@@ -21,9 +21,23 @@ const HeroSec = () => {
         </div>
        </div>
        <div className='w-1/2'>
-        <div className='flex'>
-           <div className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px]'>hello</div>
-           <div className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px]'>hello</div>
+        <div className='flex ml-60 mt-20'>
+           <div className='rounded-lg w-[150px] h-[150px] shadow-2xl mr-7 bg-[#FBF5F0] transition-all duration-300 hover:scale-90'>
+             hjhjhjhhhj
+           </div>
+           <div className='rounded-lg w-[150px] h-[150px] shadow-2xl mr-7 bg-[#F7F6FC] transition-all duration-300 hover:scale-90'>hello</div>
+        </div>
+        <div className='flex ml-60 mt-6'>
+           <div className='rounded-lg w-[150px] h-[150px] shadow-2xl mr-7 bg-[#FBF1F1] transition-all duration-300 hover:scale-90'>
+             hjhjhjhhhj
+           </div>
+           <div className='rounded-lg w-[150px] h-[150px] shadow-2xl mr-7 bg-[#F0F7F4] transition-all duration-300 hover:scale-90'>hello</div>
+        </div>
+        <div className='flex ml-60 mt-6'>
+           <div className='rounded-lg w-[150px] h-[150px] shadow-2xl mr-7 bg-[#F1F4FB] transition-all duration-300 hover:scale-90'>
+             
+           </div>
+           <div className='rounded-lg w-[150px] h-[150px] shadow-2xl mr-7 bg-[#FEF5FF] transition-all duration-300 hover:scale-90'>hello</div>
         </div>
        </div>
       </div>

@@ -8,7 +8,7 @@ const HeaderComp = () => {
   // }
   return (
     <>
-      <header className='bg-[#FFF7F2] sticky top-0 z-10'>
+      <header className='bg-[#FFF7F2] sticky top-0'>
          <section className='flex  justify-between items-center'>
             <div>
                 <Link href="/" passHref>
