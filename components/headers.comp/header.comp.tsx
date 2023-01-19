@@ -40,16 +40,16 @@ const HeaderComp = () => {
               <Link href='/'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px] mr-4'>Log in</button></Link>
               <Link href='/'><button className='w-[100px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
             </div>
-            <section id="mobile-menu" className="absolute top-68 bg-black w-full text-5xl flex-col justify-content-center origin-top animate-open-menu hidden" ref={mobileMenuRef}>
+            <section id="mobile-menu" className="absolute top-0 bg-[#FFF7F2] w-full flex-col justify-content-center origin-top animate-open-menu hidden" ref={mobileMenuRef}>
          {/* <!-- <button class="text-8xl self-end px-6"> &times;</button> --> */}
          <nav className="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-          <Link href="#roror" className="w-full text-center py-6 hover:opacity-90 text-white" >Home</Link>
-          <Link href="#rockets" className="w-full text-center py-6 hover:opacity-90" >Product</Link>
-          <Link href="#testimonials" className="w-full text-center py-6 hover:opacity-90" >FAQ</Link>
-          <Link href="#contact" className="w-full text-center py-6 hover:opacity-90" >Contact-Us</Link>
-          <div className='mr-32 lg:inline md:inline hidden'>
-              <Link href='/'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px] mr-4'>Log in</button></Link>
-              <Link href='/'><button className='w-[100px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
+          <Link href="#roror" className="w-full text-center py-6 hover:opacity-90" >Home</Link>
+          <Link href="#rockets" className="w-full text-center py-6 hover:opacity-90">Product</Link>
+          <Link href="#testimonials" className="w-full text-center py-6 hover:opacity-90">FAQ</Link>
+          <Link href="#contact" className="w-full text-center py-6 hover:opacity-90">Contact-Us</Link>
+          <div className=''>
+              <Link href='/'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[90%] h-[45px] mr-4'>Log in</button></Link>
+              <Link href='/'><button className='w-[90%] mt-3 h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
             </div>
          </nav>
        </section>
