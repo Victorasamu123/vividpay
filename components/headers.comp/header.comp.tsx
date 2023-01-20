@@ -18,7 +18,7 @@ const HeaderComp = () => {
   return (
     <>
       <header className='bg-[#FFF7F2] sticky top-0 w-[100%]'>
-         <section className='flex justify-between items-center -ml-[50px]'>
+         <section className='flex justify-between items-center -ml-[50px] lg:ml-0'>
             <div>
                 <Link href="/" passHref>
                 <Image src={iconb} alt="hello" width={250} height={100}/>
