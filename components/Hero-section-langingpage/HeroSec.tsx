@@ -12,16 +12,16 @@ import six from "../../public/images/svgexport-12.svg"
 const HeroSec = () => {
   return (
     <>
-      <div className='flex bg-[#FFF7F2]'>
-       <div className='w-1/2'>
-        <p className='font-apple text-[30px] font-medium text-[#525254] mt-20 ml-[89px]'>The Most Unique Digital Wallet</p>
-        <div className='ml-[89px] text-[56px] font-bold text-[#220C60] mt-3'>
+      <div className='lg:flex md:flex block bg-[#FFF7F2]'>
+       <div className='lg:w-1/2 md:w-1/2 w-full lg:pt-0 md:pt-0 pt-10'>
+        <p className='font-apple lg:text-[30px] md:text-[30px] text-[25px] font-medium text-[#525254] lg:mt-20 md:mt-20 lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify'>The Most Unique Digital Wallet</p>
+        <div className='lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify text-[40px] font-bold text-[#220C60] mt-3 font-apple'>
         Not Just Another Payment App
         </div>
-        <div className='ml-[89px] text-[16px] font-apple font-normal mt-4'>
+        <div className='lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify lg:text-[16px] md:text-[16px] text-[16px] font-apple font-normal lg:p-0 md:p-0 p-4'>
         We know everyone is tired of new payment apps, but what we've built is VERY UNIQUE. It's fresh, it's new, it's different. Tribapay is a digital wallet that lets you send and receive money, store money in a pin, sell your airtime and get cash, pay with your Dollar Card and pay for other utilities.
         </div>
-        <div className='ml-[89px] mt-[28px] flex'>
+        <div className='lg:ml-[89px] md:ml-[89px] mt-[28px] flex'>
           <Link href='/' passHref><Image src={apple} width={140} height={100} alt={"apple_stor"}></Image></Link>
           <Link href='/' passHref><Image src={playstore} width={140} height={100} alt={"apple_stor"} className="ml-10"></Image></Link>
         </div>
