@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import HeaderComp from '@/components/headers.comp/header.comp'
 import HeroSec from '@/components/Hero-section-langingpage/HeroSec'
+import AboutUs from '@/components/about-us/About-us'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <HeaderComp/>
         <HeroSec/>
+        <AboutUs/>
       </main>
     </>
   )

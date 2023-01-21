@@ -15,7 +15,7 @@ const HeroSec = () => {
       <div className='lg:flex md:flex block bg-[#FFF7F2] pb-10'>
        <div className='lg:w-1/2 md:w-1/2 w-full lg:pt-0 md:pt-0 pt-10'>
         <p className='font-apple lg:text-[30px] md:text-[30px] text-[25px] font-medium text-[#525254] lg:mt-20 md:mt-20 lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify'>The Most Unique Digital Wallet</p>
-        <div className='lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify text-[40px] font-bold text-[#220C60] mt-3 font-apple'>
+        <div className='lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify lg:text-[56px] md:text-[40px] text-[40px] font-bold text-[#220C60] mt-3 font-apple'>
         Not Just Another Payment App
         </div>
         <div className='lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify lg:text-[16px] md:text-[16px] text-[16px] font-apple font-normal lg:p-0 md:p-0 p-4'>

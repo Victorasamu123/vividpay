@@ -10,3 +10,9 @@
         @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
     }
 }
+
+.bg-new{
+    background-image: url(../public/images/bg-union1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

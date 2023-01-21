@@ -26,9 +26,20 @@ module.exports = {
           '80%': { transform: 'scaleY(1.2)'},
           '100%': { transform: 'scaleY(1)'},
         },
+        'element':{
+          '0%': { transform: 'scaleY(0)'},
+          '20%': { transform: 'scaleY(0.2)'},
+          '40%': { transform: 'scaleY(0.4)'},
+          '60%': { transform: 'scaleY(0.6)'},
+          '80%': { transform: 'scaleY(0.8)'},
+          '100%': { transform: 'scaleY(1)'},
+        },
+
       },
       animation: {
         'open-menu': 'open-menu 0.5s ease-in-out forwards',
+        'element': 'element 2s ease-in-out forwards',
+
       }
     },
   },
