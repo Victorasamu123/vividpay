@@ -27,18 +27,15 @@ module.exports = {
           '100%': { transform: 'scaleY(1)'},
         },
         'element':{
-          '0%': { transform: 'scaleY(0)'},
-          '20%': { transform: 'scaleY(0.2)'},
-          '40%': { transform: 'scaleY(0.4)'},
-          '60%': { transform: 'scaleY(0.6)'},
-          '80%': { transform: 'scaleY(0.8)'},
-          '100%': { transform: 'scaleY(1)'},
+          '0%': { transform: "translateY(1.5rem)"},
+          // '50%': { transform: 'scaleY(0.5)'},
+          '100%': { transform: "translateY(-1.5rem)"},
         },
 
       },
       animation: {
         'open-menu': 'open-menu 0.5s ease-in-out forwards',
-        'element': 'element 2s ease-in-out forwards',
+        'element': 'element 2s ease-in-out forwards infinite',
 
       }
     },
