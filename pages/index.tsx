@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 import HeaderComp from '@/components/headers.comp/header.comp'
 import HeroSec from '@/components/Hero-section-langingpage/HeroSec'
 import AboutUs from '@/components/about-us/About-us'
-
+import Products from '@/components/products/Products'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
         <HeaderComp/>
         <HeroSec/>
         <AboutUs/>
+        <Products/>
       </main>
     </>
   )
