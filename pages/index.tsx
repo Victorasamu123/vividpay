@@ -248,15 +248,24 @@ export default function Home() {
         <h1 className='text-[#220C60] font-bold font-apple lg:text-[48px] md:text[48px] text-[25px]'>Not Available Currently</h1>
       </div>
       {/* contact us section */}
-      <div className='bg-[#FFF7F2] pt-14' id='contact'>
+      <div className='bg-[#FFF7F2] pt-14 pb-10' id='contact'>
          <h1 className='text-center text-[#220C60] lg:text-[56px] md:text-[56px] text-[40px] font-medium font-apple'>Contact Us</h1>
          <p className='text-center mt-6 font-apple text-[16px] text-[#525254] font-normal lg:p-0 md:p-0 p-1'>
          Have a question or just want to say hi?<br />
          We'd love to hear from you.
          </p>
          <div className='flex justify-center items-center'>
-           <div >
-             
+           <div className='bg-white rounded-[30px] w-3/5 pb-10'>
+            <div className='mt-14 flex justify-center items-center'>
+             <input type="text" placeholder='Your Full Name' className='w-2/5 border-[2px] border-[#D2D1D1] pl-3 focus:outline-[#D2D1D1] h-14'/>
+             <input type="text" placeholder='Your Email Address' className='w-2/5 border-[2px] border-[#D2D1D1] pl-3 focus:outline-[#D2D1D1] ml-4 h-14'/>
+            </div>
+            <div className='mt-8 flex justify-center items-center'>
+            <textarea name="message" id="message" cols={90} rows={8} className="border-[2px] border-[#D2D1D1] pl-3 pt-3 focus:outline-[#D2D1D1]" placeholder='Write Your Message'></textarea>
+            </div>
+            <div className='mt-6 text-center'>
+            <Link href='/'><button className='w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Submit</button></Link>
+            </div>
            </div>
          </div>
       </div>
