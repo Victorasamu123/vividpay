@@ -20,6 +20,7 @@ import emqil from "../public/images/phone-service2.webp"
 import airtime from "../public/images/phone-service1.webp"
 import icon1 from "../public/images/svgexport-190.svg"
 import icon2 from "../public/images/svgexport-18.svg"
+import Footer from '@/components/products/footer/Footer'
 export default function Home() {
   const hamburgerBtnRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -269,6 +270,7 @@ export default function Home() {
            </div>
          </div>
       </div>
+      <Footer/>
       </main>
     </>
   )
