@@ -19,6 +19,7 @@ import phoneIm from '../public/images/more-services-phone.webp'
 import emqil from "../public/images/phone-service2.webp"
 import airtime from "../public/images/phone-service1.webp"
 import icon1 from "../public/images/svgexport-190.svg"
+import icon2 from "../public/images/svgexport-18.svg"
 export default function Home() {
   const hamburgerBtnRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -54,8 +55,8 @@ export default function Home() {
                     <li className='font-semi-bold text-xl hover:text-[#220C60]'><Link href='/#hero' passHref>Home</Link></li>
                     <li className='font-semi-bold text-xl hover:text-[#220C60]'><Link href='/#about' passHref>About-Us</Link></li>
                     <li className='font-semi-bold text-xl hover:text-[#220C60] cursor-pointer'><Link href='/#product' passHref>Products</Link></li>
-                    <li className='font-semi-bold text-xl hover:text-[#220C60]'><Link href='/' passHref>FAQ</Link></li>
-                    <li className='font-semi-bold text-xl hover:text-[#220C60]'><Link href='/' passHref>Contact-Us</Link></li>
+                    <li className='font-semi-bold text-xl hover:text-[#220C60]'><Link href='/#faq' passHref>FAQ</Link></li>
+                    <li className='font-semi-bold text-xl hover:text-[#220C60]'><Link href='/#contact' passHref>Contact-Us</Link></li>
                 </ul>
             </div>
             <div className='mr-32 lg:inline md:inline hidden'>
@@ -68,7 +69,7 @@ export default function Home() {
           <Link href="#hero" className="w-full text-center py-6 hover:opacity-90" >Home</Link>
           <Link href="#about" className="w-full text-center py-6 hover:opacity-90" >About-us</Link>
           <Link href="#product" className="w-full text-center py-6 hover:opacity-90">Product</Link>
-          <Link href="#testimonials" className="w-full text-center py-6 hover:opacity-90">FAQ</Link>
+          <Link href="#faq" className="w-full text-center py-6 hover:opacity-90">FAQ</Link>
           <Link href="#contact" className="w-full text-center py-6 hover:opacity-90">Contact-Us</Link>
           <div className=''>
               <Link href='/'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[90%] h-[45px] mr-4'>Log in</button></Link>
@@ -200,6 +201,64 @@ export default function Home() {
             <Image src={airtime} alt=''></Image>
         </div>
         
+      </div>
+      {/* other products */}
+      <div className='bg-[#FFF7F2] mt-20 pt-20 pb-20'>
+      <div className='lg:flex md:flex block lg:ml-[435px] md:ml-[435px] ml-0 text-center lg:text-start md:text-start'>
+        <hr className='bg-[#D9D1F2] w-[100px] h-[7px] mt-2 rounded hidden lg:inline md:inline'/><span className='text-[18px] font-bold ml-4 font-apple text-[#3734A9]'>OUR SERVICES</span>
+      </div>
+        <h2 className='text-center md:text-[48px] lg:text-[48px] text-[28px] text-[#220C60] font-medium font-apple'>And So Much More......</h2>
+      <section className='lg:flex md:flex block'>
+        <div className='lg:ml-[100px] md:ml-[100px] ml-0 lg:mt-[200px] md:mt-[200px] mt-[50px] text-center lg:text-start md:text-start p-4 lg:p-0 md:p-0' id='one'>
+          <div id='1-1'>
+         <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Airtime to Cash</h3>
+         <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Sell your airtime and get cash or buy airtime</p>
+         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+        </div>
+        <div className='mt-10' id='1-2'>
+        <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Cashpin</h3>
+         <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Cashpin is a token that can be saved as cash</p>
+         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+        </div>
+        <div className='mt-10' id='1-3'>
+        <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Send Funds</h3>
+         <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Send money to an email address or any bank<br />account.</p>
+         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+        </div>
+        </div>
+        <div id='two' className='w-[320px] mt-[50px] ml-[100px] hidden lg:inline md:inline'>
+          <Image src={phoneIm} alt=''></Image>
+        </div>
+        <div className='lg:ml-[75px] md:ml-[75px] ml-0 lg:mt-[200px] md:mt-[200px] mt-[20px] text-center lg:text-start md:text-start p-4 lg:p-0 md:p-0' id='three'>
+          <div id='1-1'>
+         <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Fund Wallet</h3>
+         <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Fund your vividpay wallet and send money to<br />anyone.</p>
+         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+        </div>
+        <div className='mt-10' id='1-2'>
+        <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Pay Bills</h3>
+         <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Pay electricity, TV subscription, data and<br />more bills.</p>
+         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+        </div>
+        </div>
+      </section>
+      </div>
+      {/* Frequently asked question */}
+      <div className='bg-[#D9D1F2] text-center p-10' id='faq'>
+        <h1 className='text-[#220C60] font-bold font-apple lg:text-[48px] md:text[48px] text-[25px]'>Not Available Currently</h1>
+      </div>
+      {/* contact us section */}
+      <div className='bg-[#FFF7F2] pt-14' id='contact'>
+         <h1 className='text-center text-[#220C60] lg:text-[56px] md:text-[56px] text-[40px] font-medium font-apple'>Contact Us</h1>
+         <p className='text-center mt-6 font-apple text-[16px] text-[#525254] font-normal lg:p-0 md:p-0 p-1'>
+         Have a question or just want to say hi?<br />
+         We'd love to hear from you.
+         </p>
+         <div className='flex justify-center items-center'>
+           <div >
+             
+           </div>
+         </div>
       </div>
       </main>
     </>
