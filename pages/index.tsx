@@ -250,17 +250,17 @@ export default function Home() {
       {/* contact us section */}
       <div className='bg-[#FFF7F2] pt-14 pb-10' id='contact'>
          <h1 className='text-center text-[#220C60] lg:text-[56px] md:text-[56px] text-[40px] font-medium font-apple'>Contact Us</h1>
-         <p className='text-center mt-6 font-apple text-[16px] text-[#525254] font-normal lg:p-0 md:p-0 p-1'>
+         <p className='text-center mt-6 font-apple text-[16px] text-[#525254] font-normal lg:p-0 md:p-0 p-1 mb-10'>
          Have a question or just want to say hi?<br />
          We'd love to hear from you.
          </p>
-         <div className='flex justify-center items-center'>
-           <div className='bg-white rounded-[30px] w-3/5 pb-10'>
-            <div className='mt-14 flex justify-center items-center'>
-             <input type="text" placeholder='Your Full Name' className='w-2/5 border-[2px] border-[#D2D1D1] pl-3 focus:outline-[#D2D1D1] h-14'/>
-             <input type="text" placeholder='Your Email Address' className='w-2/5 border-[2px] border-[#D2D1D1] pl-3 focus:outline-[#D2D1D1] ml-4 h-14'/>
+         <div className='flex justify-center items-center lg:p-0 md:p-0 p-4'>
+           <div className='bg-white lg:rounded-[30px] md:rounded-md rounded-lg lg:w-3/5 md:w-3/5 w-full pb-10'>
+            <div className='mt-14 lg:flex md:flex block lg:justify-center lg:items-center md:justify-center md:items-center lg:p-0 md:p-4 p-4'>
+             <input type="text" placeholder='Your Full Name' className='lg:w-2/5 md:w-full w-full border-[2px] border-[#D2D1D1] pl-3 focus:outline-[#D2D1D1] h-14'/>
+             <input type="text" placeholder='Your Email Address' className='lg:w-2/5 md:w-full w-full border-[2px] border-[#D2D1D1] pl-3 focus:outline-[#D2D1D1] lg:ml-4 md:ml-0 ml-0 lg:mt-0 md:mt-4 mt-4 h-14'/>
             </div>
-            <div className='mt-8 flex justify-center items-center'>
+            <div className='mt-8 flex justify-center items-center lg:p-0 md:p-0 p-4'>
             <textarea name="message" id="message" cols={90} rows={8} className="border-[2px] border-[#D2D1D1] pl-3 pt-3 focus:outline-[#D2D1D1]" placeholder='Write Your Message'></textarea>
             </div>
             <div className='mt-6 text-center'>
