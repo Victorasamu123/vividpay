@@ -61,8 +61,8 @@ export default function Home() {
                 </ul>
             </div>
             <div className='mr-32 lg:inline md:inline hidden'>
-              <Link href='/'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px] mr-4'>Log in</button></Link>
-              <Link href='/'><button className='w-[100px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
+              <Link href='/auth/signup'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px] mr-4'>Log in</button></Link>
+              <Link href='/auth/signup'><button className='w-[100px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
             </div>
             <section id="mobile-menu" className="absolute top-0 bg-[#FFF7F2] w-full flex-col justify-content-center origin-top animate-open-menu hidden" ref={mobileMenuRef}>
          {/* <!-- <button class="text-8xl self-end px-6"> &times;</button> --> */}
@@ -73,7 +73,7 @@ export default function Home() {
           <Link href="#faq" className="w-full text-center py-6 hover:opacity-90">FAQ</Link>
           <Link href="#contact" className="w-full text-center py-6 hover:opacity-90">Contact-Us</Link>
           <div className=''>
-              <Link href='/'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[90%] h-[45px] mr-4'>Log in</button></Link>
+              <Link href='/auth/signup'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[90%] h-[45px] mr-4'>Log in</button></Link>
               <Link href='/'><button className='w-[90%] mt-3 h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
             </div>
          </nav>
@@ -160,10 +160,10 @@ export default function Home() {
         </div>
         <h1 className='lg:text-[48px] md:text-[48px] text-[30px] font-medium text-[#220C60] font-apple'>About Vividpay</h1>
         <p className='text-[16px] text-[#525254] font-normal mt-3'>Vividpay is a digital wallet that lets you send and receive money,<br/>store money in a pin, sell your airtime and get cash, pay with your <br/>Dollar Card and pay for other utilities.</p>
-        <div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
+        <Link href='/auth/signup' passHref><div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
          text-[white] p-3 font-apple lg:ml-0 md:ml-0 ml-6'>
           <button className='mr-4'>Get Started</button><Image src={icon} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image>
-        </div>
+        </div></Link>
       </div>
       <div className='lg:w-1/2 md:w-1/2 w-full lg:mt-0 md:mt-0 mt-8 lg:text-justify md:text-justify text-center p-3'>
         <Image src={phoneIm} alt='' className='lg:w-[300px] md:w-[300px] w-auto'></Image>
@@ -180,10 +180,10 @@ export default function Home() {
         </div>
         <h1 className='lg:text-[48px] md:text-[48px] text-[30px] font-medium text-[#220C60] font-apple'>Send Money To an<br />Email Address</h1>
         <p className='text-[16px] text-[#525254] font-normal mt-3'>Send money to any email address through Vividpay at no cost.<br />It's completely free.</p>
-        <div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
+        <Link href='/auth/signup' passHref><div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
          text-[white] p-3 font-apple'>
           <button className='mr-4'>Get Started</button><Image src={icon} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image>
-        </div>
+        </div></Link>
       </div>
       </div>
       <div className='lg:flex md:flex block bg-new lg:mt-32 md:mt-32 mt-0 lg:p-0 md:p-0 p-2'>
@@ -193,10 +193,10 @@ export default function Home() {
         </div>
         <h1 className='lg:text-[48px] md:text-[48px] text-[30px] font-medium text-[#220C60] font-apple'>Airtime to Cash</h1>
         <p className='text-[16px] text-[#525254] font-normal mt-3'>Ever had too much airtime and would prefer to have cash instead? Airtime to Cash is the perfect solution for you. We buy airtime 24/7, so you never have to worry.</p>
-        <div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
+        <Link href='/auth/signup' passHref><div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
          text-[white] p-3 font-apple'>
           <button className='mr-4'>Get Started</button><Image src={icon1} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image>
-        </div>
+        </div></Link>
       </div>
         <div className='bg-[#EBFBFF] text-center pt-16 pl-16 pr-16 pb-0 rounded-[40px] lg:mr-[200px] md:mr-[200px] mr-0 lg:w-1/2 md:w-1/2 w-full lg:mt-0 md:mt-0 mt-10'>
             <Image src={airtime} alt=''></Image>
@@ -214,17 +214,17 @@ export default function Home() {
           <div id='1-1'>
          <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Airtime to Cash</h3>
          <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Sell your airtime and get cash or buy airtime</p>
-         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+         <Link href='/auth/signup' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
         </div>
         <div className='mt-10' id='1-2'>
         <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Cashpin</h3>
          <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Cashpin is a token that can be saved as cash</p>
-         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+         <Link href='/auth/signup' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
         </div>
         <div className='mt-10' id='1-3'>
         <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Send Funds</h3>
          <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Send money to an email address or any bank<br />account.</p>
-         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+         <Link href='/auth/signup' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
         </div>
         </div>
         <div id='two' className='w-[320px] mt-[50px] ml-[100px] hidden lg:inline md:inline'>
@@ -234,12 +234,12 @@ export default function Home() {
           <div id='1-1'>
          <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Fund Wallet</h3>
          <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Fund your vividpay wallet and send money to<br />anyone.</p>
-         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+         <Link href='/auth/signup' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
         </div>
         <div className='mt-10' id='1-2'>
         <h3 className='text-[22px] text-[#220C60] font-medium font-apple'>Pay Bills</h3>
          <p className='text-[16px] text-[#525254] font-normal font-apple mt-2'>Pay electricity, TV subscription, data and<br />more bills.</p>
-         <Link href='/' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
+         <Link href='/auth/signup' passHref className='flex mt-2'><p className='mr-4 text-[16px] text-[#3813A0] font-semibold font-apple'>Get Started</p>  <Image src={icon2} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image></Link>
         </div>
         </div>
       </section>
