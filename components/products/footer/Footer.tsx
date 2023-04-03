@@ -36,6 +36,9 @@ const Footer = () => {
             Follow us on social media and find out the<br />
             latest updates and features
             </p>
+            <div>
+              
+            </div>
           </div>
          </div>
       </div>
