@@ -61,7 +61,7 @@ export default function Home() {
                 </ul>
             </div>
             <div className='mr-32 lg:inline md:inline hidden'>
-              <Link href='/auth/signup'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px] mr-4'>Log in</button></Link>
+              <Link href='/auth/signin'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[100px] h-[45px] mr-4'>Log in</button></Link>
               <Link href='/auth/signup'><button className='w-[100px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
             </div>
             <section id="mobile-menu" className="absolute top-0 bg-[#FFF7F2] w-full flex-col justify-content-center origin-top animate-open-menu hidden" ref={mobileMenuRef}>

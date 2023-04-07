@@ -12,7 +12,7 @@ const signup = () => {
       </Head>
       <main>
         <section className=''>
-
+           <div>hello</div>
         </section>
       </main>
     </>
