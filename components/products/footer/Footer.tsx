@@ -1,5 +1,9 @@
 import Link from "next/link";
-
+import Image from "next/image";
+import facebook from "../../../public/images/Facebook.webp"
+import github from "../../../public/images/git.svg"
+import linkedin from "../../../public/images/hello.png"
+import instagram from "../../../public/images/instagram.webp"
 const Footer = () => {
   return (
     <>
@@ -36,11 +40,30 @@ const Footer = () => {
             Follow us on social media and find out the<br />
             latest updates and features
             </p>
-            <div>
-              
+            <div className="flex mt-2 items-center justify-center pb-3 lg:items-start lg:justify-start">
+              <Link href='' passHref className="mr-4">
+                <Image src={facebook} alt='facebook' className="w-10"></Image>
+              </Link>
+              <Link href='' passHref className="mr-4">
+                <Image src={instagram} alt='facebook' className="w-10"></Image>
+              </Link>
+              <Link href='' passHref className="mr-4">
+              <Image src={linkedin} alt='facebook' className="w-10"></Image>
+              </Link>
+              <Link href='' passHref className="mr-4">
+              <Image src={github} alt='facebook' className="w-10"></Image>
+              </Link>
             </div>
           </div>
          </div>
+          <div className="flex justify-center items-center mt-10">
+            <hr className="w-[80%] bg-white"/>
+          </div>
+          <div className="flex justify-center items-center pb-5 p-5 lg:">
+            <p className="text-white font-medium">
+             Copyright © Asamu victor Technology Limited 2022 - All rights reserved.
+            </p>
+          </div>
       </div>
     </>
   )
