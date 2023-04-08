@@ -11,8 +11,8 @@ const signup = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className=''>
-           <div>hello</div>
+        <section className='bg-sign w-[100%] h-full'>
+           
         </section>
       </main>
     </>

@@ -16,3 +16,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.bg-sign{
+    background-image: url(../public/images/bg-union1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
