@@ -11,8 +11,11 @@ const signup = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className='bg-sign w-[100%] h-full'>
-           
+        <section className='bg-sign flex justify-center items-center pt-20 pb-20'>
+           <div className='bg-[white] h-[750px] w-[43%] shadow-lg shadow-black rounded-3xl'>
+            <p className='mt-10 ml-[75px] text-[#3813A0] text-[30px] font-bold font-apple'>Vividpay</p>
+            <h2 className='text-[32px] font-sans font-lighter mt-[50px] ml-[75px] text-[#220C60]'>Get started</h2>
+           </div>
         </section>
       </main>
     </>
