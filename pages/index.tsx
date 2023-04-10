@@ -127,7 +127,7 @@ export default function Home() {
            </div>
            <div className='rounded-lg w-[110px] h-[210px] lg:w-[150px] lg:h-[170px] shadow-2xl mr-7 bg-[#F0F7F4] transition-all duration-300 hover:scale-90'>
            <Image src={fourth} alt='' width={40} height={40} className='ml-3 mt-3'/>
-             <p className='font-apple font-medium ml-3 mt-3 text-[#1E8A5E]'>Send Funds</p>
+             <p className='font-apple font-medium ml-3 mt-3 text-[#1E8A5E]'>Fund wallet</p>
              <div className='text-[13px] ml-3 mt-2 text-[#525254]'>
               Fund your vividpay wallet and send money to anyone.
              </div>
