@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react'
-
+import iconb from "../../public/images/svgexport-14.svg"
+import Image from 'next/image';
 const signup = () => {
   return (
     <>
@@ -13,10 +14,12 @@ const signup = () => {
       <main>
         <section className='bg-sign flex justify-center items-center pt-20 pb-20'>
            <div className='bg-[white] h-[790px] w-[43%] shadow-lg shadow-black rounded-3xl'>
-            <p className='mt-10 ml-[75px] text-[#3813A0] text-[30px] font-bold font-apple'>Vividpay</p>
-            <h2 className='text-[32px] font-apple font-lighter mt-[50px] ml-[75px] text-[#220C60]'>Get started</h2>
-            <p className='mt-[10px] ml-[75px] text-[18px] text-[#757576] font-apple font-medium'>Hi there, We welcome you to vividpay</p>
-            <div className='ml-[75px] mt-10'>
+            <div className='mt-[14px] ml-[13px]'>
+             <Image src={iconb} alt='logo' width={210}></Image>
+            </div>
+            <h2 className='text-[32px] font-apple font-lighter mt-[8px] ml-[75px] text-[#220C60]'>Get started</h2>
+            <p className='mt-[8px] ml-[75px] text-[18px] text-[#757576] font-apple font-medium'>Hi there, We welcome you to vividpay</p>
+            <div className='ml-[75px] mt-[38px]'>
               <label htmlFor="Firstname" className='block text-[14px] text-[#67656E] font-apple font-medium'>Firstname</label>
               <input type="text" className='w-[85%] h-[45px] bg-[#757576] rounded-[4px]'/>
             </div>
