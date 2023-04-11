@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react'
 import iconb from "../../public/images/svgexport-14.svg"
 import Image from 'next/image';
+import Link from 'next/link';
 const signup = () => {
   return (
     <>
@@ -21,8 +22,17 @@ const signup = () => {
             <p className='mt-[8px] ml-[75px] text-[18px] text-[#757576] font-apple font-medium'>Hi there, We welcome you to vividpay</p>
             <div className='ml-[75px] mt-[38px]'>
               <label htmlFor="Firstname" className='block text-[14px] text-[#67656E] font-apple font-medium'>Firstname</label>
-              <input type="text" className='w-[85%] h-[45px] bg-[#757576] rounded-[4px]'/>
+              <input type="text" className='w-[85%] h-[50px] bg-[#757576] rounded-[4px]'/>
+              <label htmlFor="Lastname" className='block text-[14px] text-[#67656E] font-apple font-medium mt-5'>Lastname</label>
+              <input type="text" className='w-[85%] h-[50px] bg-[#757576] rounded-[4px]'/>
+              <label htmlFor="Email" className='block text-[14px] text-[#67656E] font-apple font-medium mt-5'>Email</label>
+              <input type="email" className='w-[85%] h-[50px] bg-[#757576] rounded-[4px]'/>
+              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#3813A0] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
             </div>
+            <div className='flex items-center justify-center mt-10'>
+              <span className='text-[18px] font-normal'>Already have an account? <Link href='' className='font-semibold'>Login</Link></span>
+            </div>
+              <p className='text-center mt-[27px] text-[14px]'>Avanin 1.0</p>
            </div>
         </section>
       </main>
