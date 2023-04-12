@@ -19,17 +19,15 @@ const otp = () => {
             <div className='mt-[14px] ml-[13px]'>
              <Image src={iconb} alt='logo' width={210}></Image>
             </div>
-            <h2 className='text-[32px] font-apple font-lighter mt-[8px] ml-[75px] text-[#220C60]'>Sign In</h2>
-            <p className='mt-[8px] ml-[75px] text-[18px] text-[#757576] font-apple font-medium'>Welcome back😜</p>
+            <h2 className='text-[32px] font-apple font-lighter mt-[8px] ml-[75px] text-[#220C60]'>Verification</h2>
+            <p className='mt-[8px] ml-[75px] text-[18px] text-[#757576] font-apple font-medium'>Please cconfirm otp sents to your email address</p>
             <div className='ml-[75px] mt-[38px]'>
-              <label htmlFor="Email" className='block text-[14px] text-[#67656E] font-apple font-medium'>Email</label>
-              <input type="email" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2'/>
-              <label htmlFor="Password" className='block text-[14px] text-[#67656E] font-apple font-medium mt-5'>Password</label>
-              <input type="password" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2'/>
-              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Sign In</button>
+              <label htmlFor="Otp" className='block text-[14px] text-[#67656E] font-apple font-medium'>Otp</label>
+              <input type="text" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='confirm otp'/>
+              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Confirm</button>
             </div>
             <div className='flex items-center justify-center mt-10'>
-              <span className='text-[18px] font-normal'>Do not have an account? <Link href='' className='font-semibold'>Signup</Link></span>
+              <span className='text-[18px] font-normal'>Did not get OTP? <Link href='' className='font-semibold'>Resend</Link></span>
             </div>
               <p className='text-center mt-[27px] text-[14px]'>Avanin 1.0</p>
            </div>
