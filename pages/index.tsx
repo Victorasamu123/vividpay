@@ -73,8 +73,8 @@ export default function Home() {
           <Link href="#faq" className="w-full text-center py-6 hover:opacity-90">FAQ</Link>
           <Link href="#contact" className="w-full text-center py-6 hover:opacity-90">Contact-Us</Link>
           <div className=''>
-              <Link href='/auth/signup'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[90%] h-[45px] mr-4'>Log in</button></Link>
-              <Link href='/'><button className='w-[90%] mt-3 h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
+              <Link href='/auth/signin'><button className='border font-[700] text-[#3813A0] rounded-md border-[#3813A0] w-[90%] h-[45px] mr-4'>Log in</button></Link>
+              <Link href='/auth/signup'><button className='w-[90%] mt-3 h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md text-[white]'>Sign up</button></Link>
             </div>
          </nav>
        </section>

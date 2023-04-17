@@ -15,16 +15,20 @@ const otp = () => {
       </Head>
       <main>
         <section className='bg-sign flex justify-center items-center pt-20 pb-20'>
-           <div className='bg-[white] h-[790px] w-[43%] shadow-lg shadow-black rounded-3xl'>
+           <div className='lg:bg-[white] lg:h-[790px] lg:w-[43%] h-[95%] w-[100%] lg:shadow-lg lg:shadow-black lg:rounded-3xl'>
             <div className='mt-[14px] ml-[13px]'>
              <Image src={iconb} alt='logo' width={210}></Image>
             </div>
-            <h2 className='text-[32px] font-apple font-lighter mt-[8px] ml-[75px] text-[#220C60]'>Verification</h2>
-            <p className='mt-[8px] ml-[75px] text-[18px] text-[#757576] font-apple font-medium'>Please cconfirm otp sents to your email address</p>
-            <div className='ml-[75px] mt-[38px]'>
-              <label htmlFor="Otp" className='block text-[14px] text-[#67656E] font-apple font-medium'>Otp</label>
+            <h2 className='text-[32px] font-apple font-lighter lg:mt-[8px] lg:ml-[75px] md:mt-[8px] md:ml-[75px] text-center lg:text-start md:text-start text-[#220C60]'>Verification</h2>
+            <p className='lg:mt-[8px] lg:ml-[75px] md:mt-[8px] md:ml-[75px] text-center lg:text-start md:text-start text-[18px] text-[#757576] font-apple font-medium'>Please confirm otp sents to your email address</p>
+            <div className='lg:ml-[75px] lg:mt-[38px] md:ml-[75px] md:mt-[38px] mt-[38px]'>
+              <label htmlFor="Otp" className='block text-[14px] text-[#67656E] font-apple font-medium ml-[7.5%] lg:ml-0 md:ml-0'>Otp</label>
+              <div className='flex justify-center lg:block md:block'>
               <input type="text" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='confirm otp'/>
+              </div>
+              <div className='flex justify-center lg:block md:block'>
               <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Confirm</button>
+              </div>
             </div>
             <div className='flex items-center justify-center mt-10'>
               <span className='text-[18px] font-normal'>Did not get OTP? <Link href='' className='font-semibold'>Resend</Link></span>
