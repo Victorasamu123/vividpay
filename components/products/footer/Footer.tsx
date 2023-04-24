@@ -5,6 +5,8 @@ import github from "../../../public/images/git.svg"
 import linkedin from "../../../public/images/hello.png"
 import instagram from "../../../public/images/instagram.webp"
 const Footer = () => {
+  const new_date :Date= new Date()
+    const year : number = new_date.getFullYear()
   return (
     <>
       <div className="bg-[#0D0526] lg:pl-28 md:pl-0 pl-0 lg:text-start md:text-center text-center pt-20">
@@ -61,7 +63,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-center items-center pb-5 p-5 lg:">
             <p className="text-white font-medium">
-             Copyright © Asamu victor Technology Limited 2022 - All rights reserved.
+             Copyright © Asamu victor Technology Limited {year} - All rights reserved.
             </p>
           </div>
       </div>
