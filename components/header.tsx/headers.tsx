@@ -16,7 +16,7 @@ const Headers = () => {
   return (
     <>
      <main> 
-        <header className='bg-[#FFFFFF] w-full h-[85px] flex'>
+        <header className='bg-[#FFFFFF] w-full h-[85px] flex sticky top-0'>
           <div className='-mt-[30px] w-fit ml-10'>
             <Image src={iconb} alt='vividpay' width={250}></Image>
           </div>

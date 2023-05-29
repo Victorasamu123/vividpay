@@ -4,6 +4,26 @@ import Head from 'next/head';
 import Image from 'next/image';
 import iconb from "../../public/images/svgexport-14.svg"
 import Headers from '@/components/header.tsx/headers';
+import dashboard from '../../public/images/dashboard images/svgexport-8.svg'
+import cashpin from '../../public/images/dashboard images/svgexport-13.svg'
+import cards from '../../public/images/dashboard images/svgexport-10.svg'
+import transactios from '../../public/images/dashboard images/svgexport-11.svg'
+import profile from '../../public/images/dashboard images/svgexport-12.svg'
+import logout from '../../public/images/dashboard images/svgexport-3.svg'
+import phone from "../../public/images/phone-service1.webp"
+import naira1 from '../../public/images/dashboard images/svgexport-14.svg'
+import naira2 from '../../public/images/dashboard images/svgexport-15.svg'
+import naira3 from '../../public/images/dashboard images/svgexport-16.svg'
+import rightArrow from "../../public/images/dashboard images/svgexport-17.svg"
+import rightArrowblue from "../../public/images/dashboard images/svgexport-18.svg"
+import sendmoney from "../../public/images/dashboard images/svgexport-19.svg"
+import fundwallet from "../../public/images/dashboard images/svgexport-20.svg"
+import airtime from "../../public/images/dashboard images/svgexport-21.svg"
+import cashpin2 from "../../public/images/svgexport-8.svg"
+import paybills from "../../public/images/dashboard images/svgexport-22.svg"
+import tocash from "../../public/images/dashboard images/svgexport-23.svg"
+import data from "../../public/images/dashboard images/svgexport-24.svg"
+import virtual from "../../public/images/dashboard images/svgexport-26.svg"
 const index = () => {
     const new_date :Date= new Date()
     const date : number = new_date.getDate()
@@ -19,14 +39,189 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
      </Head>
       <main>
-        <section className='w-full h-full bg-black'>  
+        <section className='w-full h-full bg-[#F1F1F1] pb-5'>  
         <Headers/>
-        <div>
-          davido1000
+        <div className='flex'>
+          {/* sidebar menu code */}
+        <div id='one' className='bg-[#FFFFFF] w-[14%] h-[528px] ml-[6%] mt-[2%] rounded-xl'>
+          <div className='w-full h-[52px] bg-[#623ECB] rounded-tr-xl rounded-tl-xl pt-[14px] pl-4'>
+             <Link href='' passHref className='flex'>
+              <Image src={dashboard} alt=''></Image>
+              <p className='text-[#FFFFFF] text-[16px] font-sans font-semibold ml-[10px]'>Dashboard</p>
+             </Link>
+          </div>
+          <div className='w-full h-[52px] pt-[14px] pl-4 hover:bg-[#F3EFFF] mt-2'>
+             <Link href='' passHref className='flex'>
+              <Image src={cashpin} alt='' width={25}></Image>
+                <p className='text-[16px] font-sans font-medium ml-[10px] mt-1 text-[#525254]'>Cashpin</p>
+             </Link>
+          </div>
+          <div className='w-full h-[52px] pt-[14px] pl-4 hover:bg-[#F3EFFF] mt-2'>
+             <Link href='' passHref className='flex'>
+              <Image src={cards} alt='' width={25}></Image>
+                <p className='text-[16px] font-sans font-medium ml-[10px] mt-1 text-[#525254]'>Cards</p>
+             </Link>
+          </div>
+          <div className='w-full h-[52px] pt-[14px] pl-4 hover:bg-[#F3EFFF] mt-2'>
+             <Link href='' passHref className='flex'>
+              <Image src={transactios} alt='' width={25}></Image>
+                <p className='text-[16px] font-sans font-medium ml-[10px] mt-1 text-[#525254]'>Transactions</p>
+             </Link>
+          </div>
+          <div className='w-full h-[52px] pt-[14px] pl-4 hover:bg-[#F3EFFF] mt-2'>
+             <Link href='' passHref className='flex'>
+              <Image src={profile} alt='' width={25}></Image>
+                <p className='text-[16px] font-sans font-medium ml-[10px] mt-1 text-[#525254]'>Profile</p>
+             </Link>
+          </div>
+          <div className='w-full h-[52px] pt-[14px] pl-4 hover:bg-[#F3EFFF] mt-2 mb-2'>
+             <Link href='' passHref className='flex'>
+              <Image src={logout} alt='' width={25}></Image>
+                <p className='text-[16px] font-sans font-medium ml-[10px] mt-1 text-[#525254]'>Logout</p>
+             </Link>
+          </div>
+          <div className=' flex justify-center'>
+          <div className='bg-[#9672FF] w-[93%] h-[160px] rounded-xl flex justify-center'>
+             <Image src={phone} alt='' width={100}></Image>
+          </div>
+          </div>
+        </div>
+        {/* middle account info code */}
+        <div id='two' className='mt-[2%] w-[53%] ml-[2.3%]'>
+          <div className='flex'>
+            {/* Available balance */}
+           <div className='bg-[#FFFFFF] w-[32%] h-[100px] rounded-md shadow'>
+            <div className='flex mt-4 ml-4'>
+             <Image src={naira1} alt=''></Image>
+             <p className='ml-2 text-[15px] text-[#220C60] font-medium'>Available Balance</p>
+            </div>
+            <p className='text-[#220C60] text-[18px] font-medium ml-4 mt-4 font-sans'>₦0.00</p>
+           </div>
+          {/* Ledger balance */}
+          <div className='bg-[#F0F7F4] w-[32%] h-[100px] rounded-md ml-[2%] shadow'>
+            <div className='flex mt-4 ml-4'>
+             <Image src={naira2} alt=''></Image>
+             <p className='ml-2 text-[15px] text-[#1E8A5E] font-medium'>Ledger Balance</p>
+            </div>
+            <p className='text-[#1E8A5E] text-[18px] font-medium ml-4 mt-4 font-sans'>₦0.00</p>
+           </div>
+           {/*withdrawable balance */}
+           <div className='bg-[#F1F4FB] w-[32%] h-[100px] rounded-md ml-[2%] shadow'>
+            <div className='flex mt-4 ml-4'>
+             <Image src={naira3} alt=''></Image>
+             <p className='ml-2 text-[15px] text-[#013AC0] font-medium'>Withdrawable Balance</p>
+            </div>
+            <p className='text-[#013AC0] text-[18px] font-medium ml-4 mt-4 font-sans'>₦0.00</p>
+           </div>
+          </div>
+          {/*Transactio history */}
+          <div className='w-[100%] h-[250px] bg-[#FFFFFF] shadow rounded-xl mt-10 pt-[27px] pl-4 pr-4'>
+            <div className='flex justify-between'>
+               <h2 className='text-[18px] text-[#18171B] font-medium font-sans'>Transactions</h2>
+               <Link href=''>
+               <p className='flex text-[15px] text-[#18171B] font-medium font-sans'>View All <Image src={rightArrow} alt=''></Image></p>
+               </Link>
+            </div>
+            <div className='flex justify-center'>
+               <h3 className='text-[#2B4146] text-[18px] font-sans font-medium mt-10'>There is no Transactions in place currently</h3>
+            </div>
+            <Link href='' className='flex justify-center mt-3'>
+            <button className='w-[130px] h-[50px] bg-[#623ECB] hover:bg-[#8165D5] text-white text-[14px] font-semibold font-sans rounded-md'>Send Funds</button>
+            </Link>
+          </div>
+          {/* {third section of dashboard} */}
+          </div>
+          <div id='three' className='ml-[2.3%] w-[22%] mt-[2%]'>
+            <div>
+               {/* {set pin} */}
+               <div className='bg-white w-[80%] h-[120px] rounded-xl pt-4 pl-4 pr-4'>
+                <div className='flex justify-between'>
+                  <h3 className='text-[#18171B] text-[12px] font-sans font-semibold'>Set your pin</h3>
+                  <Link href=''>
+                  <Image src={rightArrowblue} alt=''></Image>
+                  </Link>
+                </div>
+                <p className='text-[#525254] text-[12px] font-sans font-normal mt-4'>Set your transaction pin and start performing transactions</p>
+               </div>
+            </div>
+            {/* {Quick Links} */}
+            <div className='bg-white w-[80%] h-[670px] rounded-xl mt-10 pt-6 pl-4 pr-4'>
+               <h2 className='text-[#18171B] text-[18px] font-medium font-sans'>Quicklinks</h2>
+               {/* {first two} */}
+               <div className='flex mt-3'>
+                  <Link href='' className='bg-[#FBF1F1] w-[45%] h-[100px] rounded-xl'>
+                  <div className='flex justify-center mt-6'>
+                    <Image src={sendmoney} alt=''></Image>
+                  </div>
+                  <p className='text-[#C02634] text-[14px] font-medium text-center mt-2'>Send Money</p>
+                  </Link>
+                  <Link className='bg-[#F0F7F4] w-[45%] h-[100px] rounded-xl ml-4' href=''>  
+                  <div className='flex justify-center mt-6'>
+                   <Image src={fundwallet} alt=''></Image>
+                  </div>
+                  <p className='text-[#1E8A5E] text-[14px] font-medium text-center mt-2'>Fund Wallet</p>
+                  </Link>
+               </div>
+               {/* {next two two} */}
+               <div className='flex mt-5'>
+                  <Link href='' className='bg-[#F7F6FC] w-[45%] h-[100px] rounded-xl'>
+                  <div className='flex justify-center mt-6'>
+                    <Image src={cashpin2} alt=''></Image>
+                  </div>
+                  <p className='text-[#4317C0] text-[14px] font-medium text-center mt-2'>Cashpin</p>
+                  </Link>
+                  <Link href='' className='bg-[#FCF8EE] w-[45%] h-[100px] rounded-xl ml-4'>
+                  <div className='flex justify-center mt-6'>
+                    <Image src={airtime} alt=''></Image>
+                  </div>
+                  <p className='text-[#8C6500] text-[14px] font-medium text-center mt-2'>Airtime</p>
+                  </Link>
+               </div>
+               {/**next two three */}
+               <div className='flex mt-5'>
+                  <Link href='' className='bg-[#F1F4FB] w-[45%] h-[100px] rounded-xl'>
+                  <div className='flex justify-center mt-6'>
+                   <Image src={paybills} alt=''></Image>
+                  </div>
+                  <p className='text-[#013AC0] text-[14px] font-medium text-center mt-2'>Pay bills</p>
+                  </Link>
+                  <Link href='' className='bg-[#FEF5FF] w-[45%] h-[100px] rounded-xl ml-4'>
+                  <div className='flex justify-center mt-6'>
+                    <Image src={tocash} alt=''></Image>
+                  </div>
+                  <p className='text-[#AE00BB] text-[14px] font-medium text-center mt-2'>Airtime to Cash</p>
+                  </Link>
+               </div>
+               {/**next two four */}
+               <div className='flex mt-5'>
+                  <Link href='' className='bg-[#F7F1FB] w-[45%] h-[100px] rounded-xl'>
+                  <div className='flex justify-center mt-6'>
+                     <Image src={data} alt=''></Image>
+                  </div>
+                  <p className='text-[#6401A6] text-[14px] font-medium text-center mt-2'>Buy Data</p>
+                  </Link>
+                  <Link className='bg-[#F0F7F4] w-[45%] h-[100px] rounded-xl ml-4' href=''>  
+                  <div className='flex justify-center mt-6'>
+                   <Image src={fundwallet} alt=''></Image>
+                  </div>
+                  <p className='text-[#1E8A5E] text-[14px] font-medium text-center mt-2'>Wallet</p>
+                  </Link>
+               </div>
+               {/**next two five */}
+               <div className='flex mt-5'>
+                  <Link href='' className='bg-[#FFF6E9] w-[45%] h-[100px] rounded-xl'>
+                  <div className='flex justify-center mt-6'>
+                     <Image src={virtual} alt=''></Image>
+                  </div>
+                  <p className='text-[#A8581E] text-[14px] font-medium text-center mt-2'>Get virtual Card</p>
+                  </Link>
+               </div>
+            </div>
+        </div>
         </div>
         </section>
       </main>
-    </>
+    </> 
   )
 }
 
