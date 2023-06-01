@@ -1,10 +1,60 @@
 import Head from 'next/head';
-import React from 'react'
+import React, { useEffect , useState} from 'react'
 import iconb from "../../public/images/svgexport-14.svg"
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
 const compsignup = () => {
+  const router = useRouter();
+  const [Phonenumber, setPhonenumber] = useState<string>("");
+  const [DOB, setDOB] = useState<string>("");
+  const [Password, setPassword] = useState<string>("");
+  const [Profilepicture,setProfilepicture] = useState<string>("");
+  const [passworderror, setpassworderror] = useState<string>("");
+  const [phonenumbererror, setphonenumbererror] = useState<string>("");
+  let Firstname: string =''
+  let Lastname: string = ''
+  let Email: string = ''
+  useEffect(() => {
+     Firstname = router.query.param1 as string
+     Lastname = router.query.param2 as string
+    Email = router.query.param3 as string
+    console.log(Firstname,Lastname,Email)
+  }, [router.query.param1, router.query.param2, router.query.param3])
+  
+  const signup = async() =>{
+    let regexForPhonenumber=/^[\w]{8,15}$/
+    let regexForPassword=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+    Firstname = router.query.param1 as string
+    Lastname = router.query.param2 as string
+    Email = router.query.param3 as string
+    if (
+      Phonenumber === "" ||
+      Password === "" ||
+      !regexForPhonenumber.test(Phonenumber) ||
+      !regexForPassword.test(Password)
+    ) {
+      if (Phonenumber === "") {
+        setphonenumbererror("Please enter a value for the phone number");
+      } else if (!regexForPhonenumber.test(Phonenumber)) {
+        setphonenumbererror("Phonenumber must be at least 8 to 11 characters and spaces are not allowed.");
+      } else {
+        setphonenumbererror("");
+      }
+      if(Password==""){
+        setpassworderror("please this field is required !!")
+      }else if(!regexForPassword.test(Password)){
+        setpassworderror("password must contain uppercase,lowercase and numbers !!") 
+      }else {
+        setpassworderror("");
+      }
+    }else{
+      setphonenumbererror("");
+      setpassworderror("");
+      console.log(Firstname,Lastname,Email)
+      console.log(Phonenumber,DOB,Password,Profilepicture);
+    }
+  }
   return (
     <>
        <Head>
@@ -24,18 +74,20 @@ const compsignup = () => {
             <div className='lg:ml-[75px] lg:mt-[38px] md:ml-[75px] md:mt-[38px] mt-[38px]'>
               <label htmlFor="Phonenumber" className='block text-[14px] text-[#67656E] font-apple font-medium ml-[7.5%] lg:ml-0 md:ml-0'>Phonenumber</label>
               <div className='flex justify-center lg:block md:block'>
-              <input type="number" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='Enter your phonenumber'/>
+              <input type="text" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='Enter your phonenumber' onChange={(e)=>setPhonenumber(e.target.value)}/>
               </div>
+              <div>{phonenumbererror}</div>
               <label htmlFor="DOB" className='block text-[14px] text-[#67656E] font-apple font-medium mt-5 ml-[7.5%] lg:ml-0 md:ml-0'>DOB</label>
               <div className='flex justify-center lg:block md:block'>
-              <input type="date" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2'/>
+              <input type="date" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2' onChange={(e)=>setDOB(e.target.value)}/>
               </div>
               <label htmlFor="Password" className='block text-[14px] text-[#67656E] font-apple font-medium mt-5 ml-[7.5%] lg:ml-0 md:ml-0'>Password</label>
               <div className='flex justify-center lg:block md:block'>
-              <input type="password" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='password should contain at least 8 characters'/>
+              <input type="password" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='password should contain at least 8 characters' onChange={(e)=>setPassword(e.target.value)}/>
               </div>
+              <div>{passworderror}</div>
               <div className='flex justify-center lg:block md:block'>
-              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Sign Up</button>
+              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={signup}>Sign Up</button>
               </div>
             </div>
             <div className='flex items-center justify-center mt-10'>
