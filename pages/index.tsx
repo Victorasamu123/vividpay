@@ -93,7 +93,7 @@ export default function Home() {
         Not Just Another Payment App
         </div>
         <div className='lg:ml-[89px] md:ml-[89px] text-center lg:text-justify md:text-justify lg:text-[16px] md:text-[16px] text-[16px] font-apple font-normal lg:p-0 md:p-0 p-4'>
-        We know everyone is tired of new payment apps, but what we've built is VERY UNIQUE. It's fresh, it's new, it's different. Tribapay is a digital wallet that lets you send and receive money, store money in a pin, sell your airtime and get cash, pay with your Dollar Card and pay for other utilities.
+        We know everyone is tired of new payment apps, but what we have built is VERY UNIQUE. It is fresh, it is new, it is different. Tribapay is a digital wallet that lets you send and receive money, store money in a pin, sell your airtime and get cash, pay with your Dollar Card and pay for other utilities.
         </div>
         <div className='lg:ml-[89px] md:ml-[89px] flex text-center lg:text-justify md:text-justify p-6 lg:p-0 md:p-0 lg:mt-[28px] md:mt-[28px] mt-[0px]'>
           <Link href='/' passHref><Image src={apple} width={140} height={100} alt={"apple_stor"}></Image></Link>
@@ -179,7 +179,7 @@ export default function Home() {
         <hr className='bg-[#D9D1F2] w-[100px] h-[7px] mt-2 rounded'/><span className='text-[18px] font-bold ml-4 font-apple text-[#3734A9]'>OUR SERVICES</span>
         </div>
         <h1 className='lg:text-[48px] md:text-[48px] text-[30px] font-medium text-[#220C60] font-apple'>Send Money To an<br />Email Address</h1>
-        <p className='text-[16px] text-[#525254] font-normal mt-3'>Send money to any email address through Vividpay at no cost.<br />It's completely free.</p>
+        <p className='text-[16px] text-[#525254] font-normal mt-3'>Send money to any email address through Vividpay at no cost.<br />It is completely free.</p>
         <Link href='/auth/signup' passHref><div className='flex mt-6 w-[200px] h-[45px] font-[700] bg-[#3813A0] hover:bg-[#220C60] rounded-md
          text-[white] p-3 font-apple'>
           <button className='mr-4'>Get Started</button><Image src={icon} alt='' className='w-auto transition-all duration-1000 hover:translate-x-6'></Image>
@@ -253,7 +253,7 @@ export default function Home() {
          <h1 className='text-center text-[#220C60] lg:text-[56px] md:text-[56px] text-[40px] font-medium font-apple'>Contact Us</h1>
          <p className='text-center mt-6 font-apple text-[16px] text-[#525254] font-normal lg:p-0 md:p-0 p-1 mb-10'>
          Have a question or just want to say hi?<br />
-         We'd love to hear from you.
+         We d love to hear from you.
          </p>
          <div className='flex justify-center items-center lg:p-0 md:p-0 p-4'>
            <div className='bg-white lg:rounded-[30px] md:rounded-md rounded-lg lg:w-3/5 md:w-3/5 w-full pb-10'>
