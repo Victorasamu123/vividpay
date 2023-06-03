@@ -4,7 +4,7 @@ import iconb from "../../public/images/svgexport-14.svg"
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-const signup = () => {
+const Signup = () => {
   const router = useRouter();
   const [Firstname, setFirstname] = useState('')
   const [Lastname,setLastname] = useState('')
@@ -109,4 +109,4 @@ const signup = () => {
   )
 }
 
-export default signup;
+export default Signup;

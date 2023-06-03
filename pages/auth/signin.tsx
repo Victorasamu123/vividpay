@@ -4,7 +4,7 @@ import iconb from "../../public/images/svgexport-14.svg"
 import Image from 'next/image';
 import Link from 'next/link';
 
-const signin = () => {
+const Signin = () => {
   return (
     <>
      <Head>
@@ -45,4 +45,4 @@ const signin = () => {
   )
 }
 
-export default signin
+export default Signin
