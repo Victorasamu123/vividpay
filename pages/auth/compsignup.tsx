@@ -3,9 +3,11 @@ import React, { useEffect , useState} from 'react'
 import iconb from "../../public/images/svgexport-14.svg"
 import Image from 'next/image';
 import Link from 'next/link';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 const CompSignup = () => {
   const router = useRouter();
+  const signUpEndPoints : string="http://localhost:5000/auth/signup"
   const [Phonenumber, setPhonenumber] = useState<string>("");
   const [DOB, setDOB] = useState<string>("");
   const [Password, setPassword] = useState<string>("");
@@ -51,8 +53,11 @@ const CompSignup = () => {
     }else{
       setphonenumbererror("");
       setpassworderror("");
-      console.log(Firstname,Lastname,Email)
-      console.log(Phonenumber,DOB,Password,Profilepicture);
+      let userObject={Firstname,Lastname,Email,Phonenumber,DOB,Password,Profilepicture};
+      console.log(userObject);
+      axios.post(signUpEndPoints,userObject).then((result)=>{
+        console.log(result);
+      })
     }
   }
   return (

@@ -26,6 +26,7 @@ const Headers = () => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
     const new_date :Date= new Date()
     const date : number = new_date.getDate()
+    const month : number = new_date.getMonth() + 1
     const year : number = new_date.getFullYear()
   // const [date, setdate]= useState(Date())
   console.log(date,year)
@@ -45,7 +46,7 @@ const Headers = () => {
           </div>
           <div className='border-[1.4px] border-[#DADADC] h-fit w-fit text-center p-2 mt-[25px] rounded-lg text-[#535355] text-[14px] font-medium flex font-sans'>
             <Image src={dateIcon} alt=''></Image>
-            <p className='ml-2'>{date}, {year}</p>
+            <p className='ml-2'>{date}-{month}-{year}</p>
           </div>
           <div  className='border-[1.4px] border-[#DADADC] h-fit w-fit rounded-lg p-2 mt-[25px] ml-[780px] cursor-pointer'>
           <Image src={changeIcon} alt=''></Image>

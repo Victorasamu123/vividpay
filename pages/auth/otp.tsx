@@ -41,4 +41,4 @@ const otp = () => {
   )
 }
 
-export default otp
+export default otp;
