@@ -14,6 +14,7 @@ const CompSignup = () => {
   const [Profilepicture,setProfilepicture] = useState<string>("");
   const [passworderror, setpassworderror] = useState<string>("");
   const [phonenumbererror, setphonenumbererror] = useState<string>("");
+  const [ErrorMessage, setErrorMessage] = useState<string>('')
   let Firstname: string =''
   let Lastname: string = ''
   let Email: string = ''
@@ -56,7 +57,14 @@ const CompSignup = () => {
       let userObject={Firstname,Lastname,Email,Phonenumber,DOB,Password,Profilepicture};
       console.log(userObject);
       axios.post(signUpEndPoints,userObject).then((result)=>{
-        console.log(result);
+        if(result.data.status=== false){
+          setErrorMessage(result.data.message)
+        }
+        else{
+          let userDetail =JSON.stringify(result.data.newUser)
+          localStorage.setItem("userDetails",userDetail);
+          router.push('/auth/setpin')
+        }
       })
     }
   }
