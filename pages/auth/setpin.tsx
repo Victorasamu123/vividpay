@@ -1,10 +1,56 @@
 import Head from 'next/head';
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import iconb from "../../public/images/svgexport-14.svg"
 import Image from 'next/image';
 import Link from 'next/link';
-
+import axios from 'axios'
+import { useRouter } from 'next/router';
 const Setpin = () => {
+  const setPinEndPoints : string="http://localhost:5000/auth/setpin"
+  const router = useRouter()
+  const [Pin, setPin] = useState<string>("");
+  const [userId, setuserId] = useState<string>("");
+  const [userEmail, setuserEmail] = useState<string>("");
+  const [setpinerror, setsetpinerror] = useState<string>("");
+  const [Message, setMessage] = useState<string>("");
+  useEffect(() => {
+   getItem()
+  }, [])
+  
+  const getItem=async()=>{
+    let details= localStorage.getItem("userDetails")
+    let Details = details? JSON.parse(details): null;
+    setuserId(Details._id);
+    setuserEmail(Details.Email);
+    console.log(userEmail,userId);
+  }
+
+  const setpin= async()=>{
+    Pin.toString()
+    let regexForSetPin=/^[\w]{4,4}$/
+    if(
+      Pin === "" ||
+      !regexForSetPin.test(Pin)
+    ){
+      if(Pin === ""){
+        setsetpinerror("Please enter a valid pin");
+      }else if(!regexForSetPin.test(Pin)){
+        setsetpinerror("Pin must be exactly 4 character")
+      }
+    }else{
+      setsetpinerror('');
+      let goingPin = {Pin,userId,userEmail};
+      console.log(goingPin)
+      await axios.post(setPinEndPoints,goingPin).then((result)=>{
+        if(result.data.status === false){
+          setMessage(result.data.message);
+        }else{
+          setMessage(result.data.message);
+          router.push("/home");
+        }
+      })
+    }
+  }
   return (
     <>
      <Head>
@@ -24,10 +70,11 @@ const Setpin = () => {
             <div className='lg:ml-[75px] lg:mt-[38px] md:ml-[75px] md:mt-[38px] mt-[38px]'>
               <label htmlFor="Otp" className='block text-[14px] text-[#67656E] font-apple font-medium ml-[7.5%] lg:ml-0 md:ml-0'>Setpin</label>
               <div className='flex justify-center lg:block md:block'>
-              <input type="number" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='pin should be 4 characters' maxLength={4}/>
+              <input type="number" className='w-[85%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] hover:border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='pin should be 4 characters' maxLength={4} onChange={(e)=>setPin(e.target.value)}/>
               </div>
+              <div>{setpinerror}</div>
               <div className='flex justify-center lg:block md:block'>
-              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Confirm</button>
+              <button className='block mt-[35px] w-[85%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={setpin}>Confirm</button>
               </div>
             </div>
             <div className='flex items-center justify-center mt-10'>

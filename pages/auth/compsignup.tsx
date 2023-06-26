@@ -31,6 +31,11 @@ const CompSignup = () => {
     Firstname = router.query.param1 as string
     Lastname = router.query.param2 as string
     Email = router.query.param3 as string
+    let accountnumber = Math.floor(Math.random()*10000000000);
+    const AccountNumber = String(accountnumber);
+    let AccountBalance = "5000";
+    let bvn =Math.floor(Math.random()*1000000000000);
+    const BVN = String(bvn);
     if (
       Phonenumber === "" ||
       Password === "" ||
@@ -54,13 +59,14 @@ const CompSignup = () => {
     }else{
       setphonenumbererror("");
       setpassworderror("");
-      let userObject={Firstname,Lastname,Email,Phonenumber,DOB,Password,Profilepicture};
+      let userObject={Firstname,Lastname,Email,Phonenumber,DOB,Password,Profilepicture,AccountNumber,AccountBalance,BVN};
       console.log(userObject);
-      axios.post(signUpEndPoints,userObject).then((result)=>{
+      await axios.post(signUpEndPoints,userObject).then((result)=>{
         if(result.data.status=== false){
           setErrorMessage(result.data.message)
         }
         else{
+          setErrorMessage(result.data.message)
           let userDetail =JSON.stringify(result.data.newUser)
           localStorage.setItem("userDetails",userDetail);
           router.push('/auth/setpin')
