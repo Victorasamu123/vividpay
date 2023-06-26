@@ -46,7 +46,7 @@ const Setpin = () => {
           setMessage(result.data.message);
         }else{
           setMessage(result.data.message);
-          router.push("/home");
+          router.push("/auth/signin");
         }
       })
     }
