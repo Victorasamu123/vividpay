@@ -44,14 +44,20 @@ const Signin = () => {
       await axios.post(signInEndPoints,logInUser).then((result)=>{
         if(result.data.status === false){
           setMessage(result.data.message);
+          let messs = result.data.message
+          alert(messs);
         }
         else{
           setMessage(result.data.message);
           localStorage.setItem("token",result.data.token);
           localStorage.setItem("userId",result.data.userId);
           localStorage.setItem("Email",result.data.Email);
+          let messs = result.data.message
+          alert(messs);
           router.push("/auth/loading")
         }
+      }).catch((error)=>{
+        console.log(error)
       })
     }
   }

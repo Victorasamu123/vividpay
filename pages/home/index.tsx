@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -17,12 +17,47 @@ import naira3 from '../../public/images/dashboard images/svgexport-16.svg'
 import rightArrow from "../../public/images/dashboard images/svgexport-17.svg"
 import rightArrowblue from "../../public/images/dashboard images/svgexport-18.svg"
 import people from "../../public/images/profile-pic.a9136072d073801df253.png"
+import axios from 'axios';
+import { useRouter } from 'next/router';
 const index = () => {
+   const router = useRouter()
+   const tokenverificationEndPoint="http://localhost:5000/auth/tokenverification"
     const new_date :Date= new Date()
     const date : number = new_date.getDate()
     const year : number = new_date.getFullYear()
   // const [date, setdate]= useState(Date())
   console.log(date,year)
+  let token= ""
+  let userId=""
+  let Email=""
+  useEffect(() => {
+     let tokeen = localStorage.token;
+     let userID = localStorage.userId;
+     let emails = localStorage.Email;
+     token=tokeen
+     userId=userID
+     Email=emails
+     verifyToken()
+  }, [])
+  
+  const verifyToken = async()=>{
+   await axios.get(tokenverificationEndPoint,{
+      headers:{
+          "Authorization" : `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+      }
+   }).then((result)=>{
+      console.log(result)
+      if(!result.data.status){
+         localStorage.removeItem("token")
+         router.push("/auth/signin")
+      }
+   }).catch((error)=>{
+     console.log(error.message);
+   });
+  }
+  
   return (
     <>
      <Head>
@@ -152,7 +187,7 @@ const index = () => {
                <div className='flex mt-3'>
                   <Link href='' className='bg-[#FBF1F1] w-[45%] h-[100px] rounded-xl'>
                   <div className='flex justify-center mt-6'>
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9993 29.3332H19.9993C26.666 29.3332 29.3327 26.6665 29.3327 19.9998V11.9998C29.3327 5.33317 26.666 2.6665 19.9993 2.6665H11.9993C5.33268 2.6665 2.66602 5.33317 2.66602 11.9998V19.9998C2.66602 26.6665 5.33268 29.3332 11.9993 29.3332Z" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12.6802L16 8.68018L20 12.6802" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 8.68018V19.3468" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 22.0132C13.1867 23.7465 18.8133 23.7465 24 22.0132" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9993 29.3332H19.9993C26.666 29.3332 29.3327 26.6665 29.3327 19.9998V11.9998C29.3327 5.33317 26.666 2.6665 19.9993 2.6665H11.9993C5.33268 2.6665 2.66602 5.33317 2.66602 11.9998V19.9998C2.66602 26.6665 5.33268 29.3332 11.9993 29.3332Z" stroke="#C02634" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12.6802L16 8.68018L20 12.6802" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 8.68018V19.3468" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 22.0132C13.1867 23.7465 18.8133 23.7465 24 22.0132" stroke="#C02634" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                   </div>
                   <p className='text-[#C02634] text-[14px] font-medium text-center mt-2'>Send Money</p>
                   </Link>

@@ -6,7 +6,7 @@ const Loading = () => {
     useEffect(() => {
       setTimeout(() => {
         router.push("/home")
-      }, 2000);
+      }, 1000);
     }, [])
     
   return (
