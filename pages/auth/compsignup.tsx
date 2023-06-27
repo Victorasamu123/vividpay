@@ -33,7 +33,7 @@ const CompSignup = () => {
     Email = router.query.param3 as string
     let accountnumber = Math.floor(Math.random()*10000000000);
     const AccountNumber = String(accountnumber);
-    let AccountBalance = "5000";
+    let AccountBalance = "0";
     let bvn =Math.floor(Math.random()*1000000000000);
     const BVN = String(bvn);
     if (

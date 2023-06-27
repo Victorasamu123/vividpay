@@ -22,10 +22,13 @@ import { useRouter } from 'next/router';
 const index = () => {
    const router = useRouter()
    const tokenverificationEndPoint="http://localhost:5000/auth/tokenverification"
+   const userDetails = "http://localhost:5000/dashboard/getUser"
     const new_date :Date= new Date()
     const date : number = new_date.getDate()
     const year : number = new_date.getFullYear()
-  // const [date, setdate]= useState(Date())
+  const [Loading, setLoading]= useState<boolean>(true);
+  const [Balance, setBalance]= useState<number>(0);
+  const [Name, setName]= useState<string>("");
   console.log(date,year)
   let token= ""
   let userId=""
@@ -38,6 +41,7 @@ const index = () => {
      userId=userID
      Email=emails
      verifyToken()
+     getUserDetails()
   }, [])
   
   const verifyToken = async()=>{
@@ -48,7 +52,6 @@ const index = () => {
           "Accept": "application/json"
       }
    }).then((result)=>{
-      console.log(result)
       if(!result.data.status){
          localStorage.removeItem("token")
          router.push("/auth/signin")
@@ -57,7 +60,22 @@ const index = () => {
      console.log(error.message);
    });
   }
-  
+  const getUserDetails = async()=>{
+   let getObject = {userId}
+   await axios.post(userDetails,getObject).then((result)=>{
+      console.log(result.data.userDetails.Lastname);
+      if(result.data.status === false){
+         setLoading(true);
+      }else{
+         setName(result.data.userDetails.Lastname);
+         setBalance(result.data.userDetails.AccountBalance);
+         Number(Balance).toLocaleString()
+         setLoading(false);
+      }
+   }).catch((err)=>{
+      console.log(err);
+   })
+  }
   return (
     <>
      <Head>
@@ -67,6 +85,9 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
      </Head>
       <main>
+         {
+             Loading ? <div className='text-[24px] font-apple font-medium'>Loading</div> 
+              :
         <section className='w-full h-full bg-[#F1F1F1] pb-5'>  
         <Headers/>
         <div className='lg:flex md:block block'>
@@ -75,7 +96,7 @@ const index = () => {
             <Image src={people} alt="" width={40} className='rounded-full'/>
           </div>
           <div className=''>
-            <p className='text-[#535355] font-medium font-sans text-[14px]'>Hi, oluwajuwon</p>
+            <p className='text-[#535355] font-medium font-sans text-[14px]'>Hi, {Name}</p>
           </div>
          </div>
           {/* sidebar menu code */}
@@ -131,7 +152,7 @@ const index = () => {
              <Image src={naira1} alt=''></Image>
              <p className='ml-2 text-[15px] text-[#220C60] font-medium'>Available Balance</p>
             </div>
-            <p className='text-[#220C60] text-[18px] font-medium ml-4 mt-4 font-sans'>₦0.00</p>
+            <p className='text-[#220C60] text-[18px] font-medium ml-4 mt-4 font-sans'>₦{Balance}.00</p>
            </div>
           {/* Ledger balance */}
           <div className='lg:bg-[#F0F7F4] lg:w-[32%] lg:h-[100px] lg:rounded-md lg:ml-[2%] lg:shadow md:bg-[#F0F7F4] md:w-[32%] md:h-[100px] md:rounded-md md:ml-[2%] md:shadow lg:inline md:inline hidden'>
@@ -139,7 +160,7 @@ const index = () => {
              <Image src={naira2} alt=''></Image>
              <p className='ml-2 text-[15px] text-[#1E8A5E] font-medium'>Ledger Balance</p>
             </div>
-            <p className='text-[#1E8A5E] text-[18px] font-medium ml-4 mt-4 font-sans'>₦0.00</p>
+            <p className='text-[#1E8A5E] text-[18px] font-medium ml-4 mt-4 font-sans'>₦{Balance-2000}.00</p>
            </div>
            {/*withdrawable balance */}
            <div className='lg:bg-[#F1F4FB] lg:w-[32%] lg:h-[100px] lg:rounded-md lg:ml-[2%] lg:shadow md:bg-[#F1F4FB] md:w-[32%] md:h-[100px] md:rounded-md md:ml-[2%] md:shadow bg-[#F1F4FB] w-[95%] h-[100px] rounded-md shadow pt-1 lg:pt-0 md:pt-0 lg:mt-0 md:mt-0 mt-4'>
@@ -147,7 +168,7 @@ const index = () => {
              <Image src={naira3} alt=''></Image>
              <p className='ml-2 text-[15px] text-[#013AC0] font-medium'>Withdrawable Balance</p>
             </div>
-            <p className='text-[#013AC0] text-[18px] font-medium ml-4 mt-4 font-sans'>₦0.00</p>
+            <p className='text-[#013AC0] text-[18px] font-medium ml-4 mt-4 font-sans'>₦{Balance}.00</p>
            </div>
           </div>
           {/*Transactio history */}
@@ -312,17 +333,18 @@ const index = () => {
                   </div>
                   <p className='text-[#1E8A5E] text-[14px] font-medium text-center mt-2'>Wallet</p>
                   </Link>
-                  <Link href='' className='bg-[#FFF6E9] w-[30%] h-[100px] rounded-xl ml-4'>
+                  <Link href='' className='bg-[#FFF6E9] w-[30%] h-[100px] rounded-xl ml-4 '>
                   <div className='flex justify-center mt-6'>
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.24023 21.1722L21.1736 5.23889" stroke="#A8581E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.8008 24.372L16.4008 22.772" stroke="#A8581E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18.3906 20.7849L21.5773 17.5983" stroke="#A8581E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.80104 13.652L13.6544 4.79863C16.481 1.97196 17.8944 1.95863 20.6944 4.75863L27.241 11.3053C30.041 14.1053 30.0277 15.5186 27.201 18.3453L18.3477 27.1986C15.521 30.0253 14.1077 30.0386 11.3077 27.2386L4.76104 20.692C1.96104 17.892 1.96104 16.492 4.80104 13.652Z" stroke="#A8581E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.66602 29.3314H29.3327" stroke="#A8581E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                   </div>
-                  <p className='text-[#A8581E] text-[14px] font-medium text-center mt-2'>Get virtual Card</p>
+                  <p className='text-[#A8581E] text-[14px] font-medium text-center mt-2'>Get Card</p>
                   </Link>
                </div>
             </div>
         </div>
         </div>
         </section>
+         }
       </main>
     </> 
   )
