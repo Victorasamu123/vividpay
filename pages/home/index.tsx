@@ -19,7 +19,7 @@ import rightArrowblue from "../../public/images/dashboard images/svgexport-18.sv
 import people from "../../public/images/profile-pic.a9136072d073801df253.png"
 import axios from 'axios';
 import { useRouter } from 'next/router';
-const index = () => {
+const Index = () => {
    const router = useRouter()
    const tokenverificationEndPoint="http://localhost:5000/auth/tokenverification"
    const userDetails = "http://localhost:5000/dashboard/getUser"
@@ -34,17 +34,17 @@ const index = () => {
   let userId=""
   let Email=""
   useEffect(() => {
+     verifyToken()
+     getUserDetails()
+  }, [])
+  
+  const verifyToken = async()=>{
      let tokeen = localStorage.token;
      let userID = localStorage.userId;
      let emails = localStorage.Email;
      token=tokeen
      userId=userID
      Email=emails
-     verifyToken()
-     getUserDetails()
-  }, [])
-  
-  const verifyToken = async()=>{
    await axios.get(tokenverificationEndPoint,{
       headers:{
           "Authorization" : `Bearer ${token}`,
@@ -350,4 +350,4 @@ const index = () => {
   )
 }
 
-export default index;
+export default Index;
