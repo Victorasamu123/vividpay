@@ -5,8 +5,10 @@ interface ModalProps {
     isOpen:boolean;
     funding: boolean;
     setFunding:(funding:boolean)=>void;
+    pinDone:boolean;
+    setpinDone:(pinDone:boolean)=>void;
 }
-const Enterpin: React.FC<ModalProps> = ({isOpen, funding,setFunding}) => {
+const Enterpin: React.FC<ModalProps> = ({isOpen, funding,setFunding,pinDone,setpinDone}) => {
     if (!isOpen) return null;
     const iconStyle = {
         width:'40px',
@@ -15,6 +17,7 @@ const Enterpin: React.FC<ModalProps> = ({isOpen, funding,setFunding}) => {
      
     const closePin=():void=>{
        setFunding(false);
+       setpinDone(true)
     }
   return (
     <>
@@ -24,7 +27,7 @@ const Enterpin: React.FC<ModalProps> = ({isOpen, funding,setFunding}) => {
         <div className=' flex justify-center items-center flex-col '>
        <h3 className='text-[30px] font-medium mb-4'>Enter pin</h3>
          <input type="text" className='lg:w-[70%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' placeholder='Enter card number'/>
-         <button className='block mt-[15px] lg:w-[70%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={closePin}>Proceed</button>
+         <button className='block mt-[15px] lg:w-[70%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={closePin}>Send</button>
          </div>
          </div>
      </div>

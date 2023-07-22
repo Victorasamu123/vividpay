@@ -23,25 +23,18 @@ import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
 import Funding from '../modals/funding';
 import Enterpin from '../modals/enterpin';
+import Info from '../modals/info';
 
 
 const Fundwallet = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [funding, setFunding] = useState(false);
+  const [pinDone, setpinDone] = useState(false);
   const [email, setemail] = useState<string>('');
 
 useEffect(() => {
 
 }, [])
-
-const checkFunding=():void=>{
-   if(email===""){
-    setFunding(false);
-   }else{
-    setFunding(true);
-   }
-}
-
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -80,7 +73,8 @@ const checkFunding=():void=>{
          <button className='block mt-[15px] lg:w-[50%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={handleOpenModal}>Proceed</button>
          {isModalOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
         <Funding isOpen={isModalOpen} onClose={handleCloseModal} setIsOpen={setIsModalOpen} email={email} setemail={setemail} setFunding={setFunding} funding={funding}/>
-        <Enterpin isOpen={funding} setFunding={setFunding} funding={funding} />
+        <Enterpin isOpen={funding} setFunding={setFunding} funding={funding} pinDone={pinDone} setpinDone={setpinDone}/>
+        <Info isOpen={pinDone} pinDone={pinDone} setpinDone={setpinDone}/>
          </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
