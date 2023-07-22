@@ -22,10 +22,25 @@ import { useRouter } from 'next/router';
 import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
 import Funding from '../modals/funding';
+import Enterpin from '../modals/enterpin';
 
 
 const Fundwallet = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [funding, setFunding] = useState(false);
+  const [email, setemail] = useState<string>('');
+
+useEffect(() => {
+
+}, [])
+
+const checkFunding=():void=>{
+   if(email===""){
+    setFunding(false);
+   }else{
+    setFunding(true);
+   }
+}
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -59,12 +74,13 @@ const Fundwallet = () => {
        {/* middle account info code */}
        <div id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex justify-center flex-col items-center'>
          <h3 className='text-[30px] font-medium mb-4'>Fund Wallet</h3>
-         <input type="email" className='lg:w-[50%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' placeholder='Enter amount to deposit'/>
-         <input type="email" className='lg:w-[50%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' value="12355555" readOnly/>
-         <input type="email" className='lg:w-[50%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-4' value="Asamu victor" readOnly/>
+         <input type="text" className='lg:w-[50%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' placeholder='Enter amount to deposit'/>
+         <input type="text" className='lg:w-[50%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' value="12355555" readOnly/>
+         <input type="text" className='lg:w-[50%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-4' value="Asamu victor" readOnly/>
          <button className='block mt-[15px] lg:w-[50%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={handleOpenModal}>Proceed</button>
          {isModalOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
-        <Funding isOpen={isModalOpen} onClose={handleCloseModal}/>
+        <Funding isOpen={isModalOpen} onClose={handleCloseModal} setIsOpen={setIsModalOpen} email={email} setemail={setemail} setFunding={setFunding} funding={funding}/>
+        <Enterpin isOpen={funding} setFunding={setFunding} funding={funding} />
          </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
