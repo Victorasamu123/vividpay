@@ -15,10 +15,15 @@ import OpenVivid from '../modals/sendMoneyModal/openvivid';
 import Enterpin from '../modals/sendMoneyModal/enterpin';
 import Info from '../modals/sendMoneyModal/info';
 const Sendmoney = () => {
+
+    // for vividpay bank states
     const [isVividOpen, setisVividOpen] = useState<boolean>(false);
     const [sending, setSending] = useState<boolean>(false);
     const [pinOpen, setpinOpen] = useState<boolean>(false);
     const [info, setinfo] = useState<boolean>(false);
+
+    // for other banks states
+
     const handleVividModal = () => {
         setisVividOpen(true);
       };
