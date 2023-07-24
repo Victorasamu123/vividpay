@@ -14,6 +14,7 @@ import { AiFillBank } from 'react-icons/ai'
 import OpenVivid from '../modals/sendMoneyModal/openvivid';
 import Enterpin from '../modals/sendMoneyModal/enterpin';
 import Info from '../modals/sendMoneyModal/info';
+import ToOtherBank from '../modals/sendMoneyModal/tootherbank/tootherbank';
 const Sendmoney = () => {
 
     // for vividpay bank states
@@ -23,7 +24,9 @@ const Sendmoney = () => {
     const [info, setinfo] = useState<boolean>(false);
 
     // for other banks states
+    const [isOtherBanks, setisOtherBanks] = useState<boolean>(false);
 
+    // vividpay functions
     const handleVividModal = () => {
         setisVividOpen(true);
       };
@@ -31,6 +34,15 @@ const Sendmoney = () => {
       const handleVividClose = () => {
         setisVividOpen(false);
       };
+
+      //other banks function
+      const handleOtherBanksOpen = () => {
+        setisOtherBanks(true);
+      }
+ 
+      const handleOtherBanksClose= () => {
+        setisOtherBanks(false);
+      }
   return (
     <>
       <Head>
@@ -84,9 +96,12 @@ const Sendmoney = () => {
             </div>
           </div>
           {isVividOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+          {/* vividpay modals */}
           <OpenVivid isOpen={isVividOpen} onClose={handleVividClose} setVivid={setisVividOpen} pinOpen={pinOpen} setpinOpen={setpinOpen}/>
           <Enterpin isOpen={pinOpen} setpinOpen={setpinOpen} info={info} setinfo={setinfo}/>
           <Info isOpen={info} setisOpen={setinfo}/>
+          {/* other banks modal*/}
+          <ToOtherBank isOpen={isOtherBanks} onClose={handleOtherBanksClose} setOthers={setisOtherBanks}/>
         </div>
          {/* {third section of dashboard} */}
          <ThirdBar/>
