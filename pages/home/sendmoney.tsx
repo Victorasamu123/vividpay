@@ -32,7 +32,11 @@ const Sendmoney = () => {
         <SideBar/>
         {/*midddle account info*/}
         <div  id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex justify-center flex-col items-center'>
-
+            <div className='bg-white w-[50%] h-[50px] mb-5 flex justify-center items-center rounded-xl'>
+            <h1 className='text-[26px] font-apple  font-medium'>Send Money</h1>
+            </div>
+          <div className=''>
+          </div>
         </div>
          {/* {third section of dashboard} */}
          <ThirdBar/>

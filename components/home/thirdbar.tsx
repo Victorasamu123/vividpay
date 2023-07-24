@@ -28,7 +28,7 @@ const ThirdBar = () => {
               <div className='lg:bg-white lg:w-[80%] lg:h-[120px] lg:rounded-xl lg:pt-4 lg:pl-4 lg:pr-4 md:bg-white md:w-[95%] md:h-[120px]  md:rounded-xl md:pt-4 md:pl-4 md:pr-4 bg-white w-[95%] h-[120px] rounded-xl pt-4 pl-4 pr-4'>
                <div className='flex justify-between'>
                  <h3 className='text-[#18171B] text-[12px] font-sans font-semibold'>Set your pin</h3>
-                 <Link href=''>
+                 <Link href='/home'>
                  <Image src={rightArrowblue} alt=''></Image>
                  </Link>
                </div>
