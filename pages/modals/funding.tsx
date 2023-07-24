@@ -16,6 +16,7 @@ const Funding: React.FC<ModalProps> = ({ isOpen, onClose, setIsOpen, email, sete
     const iconStyle = {
       width:'40px',
       height:"40px",
+      cursor:"pointer",
     }
     const onCloseNi =():void=>{
       setIsOpen(false);
