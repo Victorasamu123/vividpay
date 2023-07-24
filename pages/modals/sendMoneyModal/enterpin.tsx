@@ -3,12 +3,15 @@ import React from 'react'
 interface ModalProps{
     isOpen:boolean;
     setpinOpen:(isOpen:boolean)=>void;
+    info:boolean;
+    setinfo:(info:boolean)=>void;
 }
-const Enterpin: React.FC<ModalProps> = ({isOpen,setpinOpen}) => {
+const Enterpin: React.FC<ModalProps> = ({isOpen,setpinOpen,info,setinfo}) => {
     if(!isOpen) return null;
 
     const closePin =():void=>{
         setpinOpen(false);
+        setinfo(true);
     }
   return (
     <>
