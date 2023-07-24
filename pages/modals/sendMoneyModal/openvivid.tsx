@@ -5,14 +5,20 @@ interface ModalProps{
     isOpen: boolean;
     onClose: ()=> void;
     setVivid:(isOpen:boolean)=>void;
+    pinOpen:boolean;
+    setpinOpen:(pinOpen:boolean)=>void;
 }
-const OpenVivid:React.FC<ModalProps> = ({isOpen, setVivid, onClose}) => {
+const OpenVivid:React.FC<ModalProps> = ({isOpen, setVivid, onClose,pinOpen,setpinOpen}) => {
     if(!isOpen) return null;
 
     const iconStyle = {
         width:'40px',
         height:"40px",
         cursor:"pointer",
+      }
+      const enterpin=():void=>{
+        setVivid(false);
+        setpinOpen(true);
       }
   return (
     <>
@@ -28,7 +34,7 @@ const OpenVivid:React.FC<ModalProps> = ({isOpen, setVivid, onClose}) => {
          <input type="text" className='lg:w-[70%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' placeholder='Enter account number of receiver'/>
          <input type="text" className='lg:w-[70%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' placeholder='Enter amount to send'/>
          <input type="text" className='lg:w-[70%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold' placeholder='Remark'/>
-         <button className='block mt-[15px] lg:w-[70%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
+         <button className='block mt-[15px] lg:w-[70%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={enterpin}>Proceed</button>
          </div>
          </div>
      </div>

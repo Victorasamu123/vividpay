@@ -12,8 +12,11 @@ import logo  from "../../public/favicon.ico"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { AiFillBank } from 'react-icons/ai'
 import OpenVivid from '../modals/sendMoneyModal/openvivid';
+import Enterpin from '../modals/sendMoneyModal/enterpin';
 const Sendmoney = () => {
     const [isVividOpen, setisVividOpen] = useState<boolean>(false);
+    const [sending, setSending] = useState<boolean>(false);
+    const [pinOpen, setpinOpen] = useState<boolean>(false);
     const handleVividModal = () => {
         setisVividOpen(true);
       };
@@ -74,7 +77,8 @@ const Sendmoney = () => {
             </div>
           </div>
           {isVividOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
-          <OpenVivid isOpen={isVividOpen} onClose={handleVividClose} setVivid={setisVividOpen}/>
+          <OpenVivid isOpen={isVividOpen} onClose={handleVividClose} setVivid={setisVividOpen} pinOpen={pinOpen} setpinOpen={setpinOpen}/>
+          <Enterpin isOpen={pinOpen} setpinOpen={setpinOpen}/>
         </div>
          {/* {third section of dashboard} */}
          <ThirdBar/>
