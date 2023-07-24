@@ -11,7 +11,16 @@ import ThirdBar from '@/components/home/thirdbar';
 import logo  from "../../public/favicon.ico"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { AiFillBank } from 'react-icons/ai'
+import OpenVivid from '../modals/sendMoneyModal/openvivid';
 const Sendmoney = () => {
+    const [isVividOpen, setisVividOpen] = useState<boolean>(false);
+    const handleVividModal = () => {
+        setisVividOpen(true);
+      };
+    
+      const handleVividClose = () => {
+        setisVividOpen(false);
+      };
   return (
     <>
       <Head>
@@ -40,8 +49,8 @@ const Sendmoney = () => {
             </div>
           <div className='w-[100%] flex justify-center items-center flex-col'>
             {/* //to vividpay */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
-            <div className='flex items-center'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleVividModal}>
+            <div className='flex items-center' >
              <Image src={logo} alt='vividpaylogo' width={40}/>
              <p className='text-center ml-3 font-medium text-[19px]'>To VividPay</p>
             </div>
@@ -64,6 +73,8 @@ const Sendmoney = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
           </div>
+          {isVividOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+          <OpenVivid isOpen={isVividOpen} onClose={handleVividClose} setVivid={setisVividOpen}/>
         </div>
          {/* {third section of dashboard} */}
          <ThirdBar/>

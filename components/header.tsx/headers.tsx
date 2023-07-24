@@ -29,7 +29,6 @@ const Headers = () => {
     const month : number = new_date.getMonth() + 1
     const year : number = new_date.getFullYear()
   // const [date, setdate]= useState(Date())
-  console.log(date,year)
   const toggleMenu = () => {
     if (hamburgerBtnRef.current && mobileMenuRef.current) {
       mobileMenuRef.current.classList.toggle('hidden');
