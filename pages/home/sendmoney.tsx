@@ -40,7 +40,7 @@ const Sendmoney = () => {
             </div>
           <div className='w-[100%] flex justify-center items-center flex-col'>
             {/* //to vividpay */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
             <div className='flex items-center'>
              <Image src={logo} alt='vividpaylogo' width={40}/>
              <p className='text-center ml-3 font-medium text-[19px]'>To VividPay</p>
@@ -48,7 +48,7 @@ const Sendmoney = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
             {/* to other banks */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
             <div className='flex items-center'>
              <AiFillBank className='text-[40px] text-[#9672FF]'/>
              <p className='text-center ml-3 font-medium text-[19px]'>To Other Banks</p>
@@ -56,7 +56,7 @@ const Sendmoney = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
             {/* to prepaid account */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
             <div className='flex items-center'>
             <AiFillBank className='text-[40px] text-[#9672FF]'/>
              <p className='text-center ml-3 font-medium text-[19px]'>To Prepaid Accounts</p>
