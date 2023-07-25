@@ -78,24 +78,24 @@ const Headers = () => {
               </div>
          <div className='min-h-screen'>
          <nav className="flex flex-col items-center py-8 pl-[20%]" aria-label="mobile">
-          <Link href="#hero" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={dashboard} alt='' className='mr-10'></Image> Dashboard</Link>
-          <Link href="#about" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={cashpin} alt='' className='mr-10'></Image> Cashpin</Link>
-          <Link href="#product" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={cards} alt='' className='mr-10'></Image> Cards</Link>
-          <Link href="#faq" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={transactios} alt='' className='mr-10'></Image> Transactions</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={profile} alt='' className='mr-10'></Image> Profile</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={logout} alt='' className='mr-10'></Image> Logout</Link>
+          <Link href="/home" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={dashboard} alt='' className='mr-10'></Image> Dashboard</Link>
+          <Link href="/home/cashpin" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={cashpin} alt='' className='mr-10'></Image> Cashpin</Link>
+          <Link href="/home/card" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={cards} alt='' className='mr-10'></Image> Cards</Link>
+          <Link href="/home/transactions" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={transactios} alt='' className='mr-10'></Image> Transactions</Link>
+          <Link href="/home" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={profile} alt='' className='mr-10'></Image> Profile</Link>
+          <Link href="/home" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={logout} alt='' className='mr-10'></Image> Logout</Link>
           </nav>
          <nav className="flex flex-col items-center py-8 pl-[20%]" aria-label="mobile">
          <p className='text-[24px] font-medium'>Quicklinks</p>
-          <Link href="#hero" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={sendmoney} alt='' className='mr-10'></Image>Send Money</Link>
-          <Link href="#about" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={fundwallet} alt='' className='mr-10'></Image>Fund Wallet</Link>
-          <Link href="#product" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={cashpin2} alt='' className='mr-10'></Image>Cashpin</Link>
-          <Link href="#faq" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={airtime} alt='' className='mr-10'></Image>Airtime</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={paybills} alt='' className='mr-10'></Image>Pay Bills</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={tocash} alt='' className='mr-10'></Image>Airtime to Cash</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={data} alt='' className='mr-10'></Image>Buy Data</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={fundwallet} alt='' className='mr-10'></Image>Wallet</Link>
-          <Link href="#contact" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={virtual} alt='' className='mr-10'></Image>Get Virtual Card</Link>
+          <Link href="/home/sendmoney" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={sendmoney} alt='' className='mr-10'></Image>Send Money</Link>
+          <Link href="/home/fundwallet" className="w-full text-start py-2 hover:opacity-90 flex" ><Image src={fundwallet} alt='' className='mr-10'></Image>Fund Wallet</Link>
+          <Link href="/home/cashpin" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={cashpin2} alt='' className='mr-10'></Image>Cashpin</Link>
+          <Link href="/home/airtime" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={airtime} alt='' className='mr-10'></Image>Airtime</Link>
+          <Link href="/home/paybills" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={paybills} alt='' className='mr-10'></Image>Pay Bills</Link>
+          <Link href="/home/airtimetocash" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={tocash} alt='' className='mr-10'></Image>Airtime to Cash</Link>
+          <Link href="/home/buydata" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={data} alt='' className='mr-10'></Image>Buy Data</Link>
+          <Link href="/home/wallet" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={fundwallet} alt='' className='mr-10'></Image>Wallet</Link>
+          <Link href="/home/card" className="w-full text-start py-2 hover:opacity-90 flex"><Image src={virtual} alt='' className='mr-10'></Image>Get Virtual Card</Link>
           </nav>
          </div>
        </section>
