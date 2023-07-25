@@ -1,21 +1,8 @@
 import React, { useState,useEffect } from 'react'
-import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import iconb from "../../public/images/svgexport-14.svg"
 import Headers from '@/components/header.tsx/headers';
-import dashboard from '../../public/images/dashboard images/svgexport-8.svg'
-import cashpin from '../../public/images/dashboard images/svgexport-13.svg'
-import cards from '../../public/images/dashboard images/svgexport-10.svg'
-import transactios from '../../public/images/dashboard images/svgexport-11.svg'
-import profile from '../../public/images/dashboard images/svgexport-12.svg'
-import logout from '../../public/images/dashboard images/svgexport-3.svg'
-import phone from "../../public/images/phone-service1.webp"
-import naira1 from '../../public/images/dashboard images/svgexport-14.svg'
-import naira2 from '../../public/images/dashboard images/svgexport-15.svg'
-import naira3 from '../../public/images/dashboard images/svgexport-16.svg'
-import rightArrow from "../../public/images/dashboard images/svgexport-17.svg"
-import rightArrowblue from "../../public/images/dashboard images/svgexport-18.svg"
 import people from "../../public/images/profile-pic.a9136072d073801df253.png"
 import axios from 'axios';
 import { useRouter } from 'next/router';
