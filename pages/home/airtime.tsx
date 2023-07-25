@@ -7,6 +7,10 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
+import mtn from "../../public/images/MTN-logo-459AAF9482-seeklogo.com.png"
+import airtel from "../../public/images/airtel.png"
+import glo from "../../public/images/1630540.png"
+import ninemobile from "../../public/images/download.jpg"
 const Airtime = () => {
   return (
     <>
@@ -32,7 +36,30 @@ const Airtime = () => {
           <SideBar/>
        {/* middle account info code */}
        <div id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex justify-center flex-col items-center'>
-        
+        <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[50px] mb-5 flex justify-center items-center rounded-xl shadow-sm'>
+            <h1 className='text-[26px] font-apple  font-medium'>Buy Airtime</h1>
+        </div>
+        <div className='w-[100%] flex justify-center items-center flex-col'>
+        <input type="text" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5' placeholder='Phone number should be at least 10 characters'/>
+        <div className='flex justify-between items-center lg:w-[50%] md:w-[90%] w-[90%] mb-5'>
+           <Image src={mtn} alt='' width={60}/>
+           <Image src={airtel} alt='' width={60}/>
+           <Image src={glo} alt='' width={60}/>
+           <Image src={ninemobile} alt='' width={60}/>
+        </div>
+        <div className='flex justify-between items-center lg:w-[50%] md:w-[90%] w-[90%] mb-5'>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦50</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦100</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦200</p>
+        </div>
+        <div className='flex justify-between items-center lg:w-[50%] md:w-[90%] w-[90%] mb-5'>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦500</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦1000</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦2000</p>
+        </div>
+        <input type="text" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5' placeholder='Enter amount to purchase'/>
+        <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
+        </div>
        </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
