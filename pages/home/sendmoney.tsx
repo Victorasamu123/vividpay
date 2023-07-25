@@ -15,6 +15,7 @@ import OpenVivid from '../modals/sendMoneyModal/openvivid';
 import Enterpin from '../modals/sendMoneyModal/enterpin';
 import Info from '../modals/sendMoneyModal/info';
 import ToOtherBank from '../modals/sendMoneyModal/tootherbank/tootherbank';
+import PrepaidComp from '../modals/sendMoneyModal/prepaid/prepaid';
 const Sendmoney = () => {
 
     // for vividpay bank states
@@ -25,6 +26,10 @@ const Sendmoney = () => {
 
     // for other banks states
     const [isOtherBanks, setisOtherBanks] = useState<boolean>(false);
+
+    // for prepaid accounts
+    const [Prepaid, setPrepaid] = useState<boolean>(false);
+
     // vividpay functions
     const handleVividModal = () => {
         setisVividOpen(true);
@@ -41,6 +46,15 @@ const Sendmoney = () => {
  
       const handleOtherBanksClose= () => {
         setisOtherBanks(false);
+      }
+
+      //prepaid account functions
+      const handlePrepaidOpen = () => {
+        setPrepaid(true);
+      }
+ 
+      const handlePrepaidClose = () => {
+        setPrepaid(false);
       }
   return (
     <>
@@ -86,7 +100,7 @@ const Sendmoney = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
             {/* to prepaid account */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handlePrepaidOpen}>
             <div className='flex items-center'>
             <AiFillBank className='text-[40px] text-[#9672FF]'/>
              <p className='text-center ml-3 font-medium text-[19px]'>To Prepaid Accounts</p>
@@ -101,6 +115,8 @@ const Sendmoney = () => {
           <Info isOpen={info} setisOpen={setinfo}/>
           {/* other banks modal*/}
           <ToOtherBank isOpen={isOtherBanks} onClose={handleOtherBanksClose} setOthers={setisOtherBanks} pinOpen={pinOpen} setpinOpen={setpinOpen}/>
+          {/* prepaid */}
+          <PrepaidComp isOpen={Prepaid} onClose={handlePrepaidClose} setPrepaid={setPrepaid} pinOpen={pinOpen} setpinOpen={setpinOpen}/>
         </div>
          {/* {third section of dashboard} */}
          <ThirdBar/>
