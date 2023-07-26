@@ -12,7 +12,19 @@ import airtel from "../../public/images/airtel.png"
 import glo from "../../public/images/1630540.png"
 import ninemobile from "../../public/images/download.jpg"
 import myAmountForData from '@/components/amount';
+import EnterpinAirtime from '../modals/airtimemodal/enterpin';
+import Info from '../modals/info';
 const BuyData = () => {
+    const [openPin, setOPenPin] = useState<boolean>(false);
+    const [pinDone, setpinDone] = useState<boolean>(false);
+    const handlePinOpen = ()=>{
+        setOPenPin(true);
+    }
+
+    const handleClosePin = () =>{
+        setOPenPin(false);
+        setpinDone(true);
+    }
   return (
     <>
        <Head>
@@ -55,8 +67,11 @@ const BuyData = () => {
                 ))
             }
          </select>
-         <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
+         <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={handlePinOpen}>Proceed</button>
         </div>
+        {openPin && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+        <EnterpinAirtime isOpen={openPin} onClose={handleClosePin} setPinOpen={setOPenPin}/>
+        <Info isOpen={pinDone} pinDone={pinDone} setpinDone={setpinDone}/>
        </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
