@@ -11,8 +11,18 @@ import mtn from "../../public/images/MTN-logo-459AAF9482-seeklogo.com.png"
 import airtel from "../../public/images/airtel.png"
 import glo from "../../public/images/1630540.png"
 import ninemobile from "../../public/images/download.jpg"
+import EnterpinAirtime from '../modals/airtimemodal/enterpin';
 const Airtime = () => {
-  return (
+    const [openPin, setOPenPin] = useState<boolean>(false);
+    
+    const handlePinOpen = ()=>{
+        setOPenPin(true);
+    }
+
+    const handleClosePin = () =>{
+        setOPenPin(false);
+    }
+     return (
     <>
      <Head>
        <title>Buy Airtime - Vividpay</title>
@@ -58,8 +68,10 @@ const Airtime = () => {
          <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦2000</p>
         </div>
         <input type="text" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5' placeholder='Enter amount to purchase'/>
-        <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
+        <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={handlePinOpen}>Proceed</button>
         </div>
+        {openPin && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+        <EnterpinAirtime isOpen={openPin} onClose={handleClosePin} setPinOpen={setOPenPin}/>
        </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
