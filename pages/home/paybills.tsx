@@ -15,7 +15,19 @@ import dstv from "../../public/images/DStv_Logo_2012.png"
 import gotv from "../../public/images/GoTv.png"
 import startimes from "../../public/images/startimes-logo.png"
 import { AiOutlineArrowRight } from 'react-icons/ai'
+import Dstv from '../modals/billsFolder/dstv';
 const PayBills = () => {
+    // dstv states
+    const [isDstvOpen, setIsDstvOpen]= useState<boolean>(false);
+    
+   // dstv function
+    const handleDstvOpen=()=>{
+        setIsDstvOpen(true);
+    }
+    const handleDstvClose=()=>{
+        setIsDstvOpen(false);
+    }
+
   return (
     <>
      <Head>
@@ -45,7 +57,7 @@ const PayBills = () => {
             </div>
           <div className='w-[100%] flex justify-center items-center flex-col'>
             {/* //dstv */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleDstvOpen}>
             <div className='flex items-center' >
              <Image src={dstv} alt='vividpaylogo' width={40}/>
              <p className='text-center ml-3 font-medium text-[19px]'>DSTV</p>
@@ -69,6 +81,8 @@ const PayBills = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
           </div>
+          {isDstvOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+          <Dstv isOpen={isDstvOpen} onClose={handleDstvClose} setIsDstvOpen={setIsDstvOpen}/>
         </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
