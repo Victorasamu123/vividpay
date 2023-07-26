@@ -28,7 +28,7 @@ const BuyData = () => {
   return (
     <>
        <Head>
-       <title>Buy Airtime - Vividpay</title>
+       <title>Buy Data - Vividpay</title>
        <meta name="description" content="Page for purchaing airtime" />
        <meta name="viewport" content="width=device-width, initial-scale=1" />
        <link rel="icon" href="/favicon.ico" /> 
