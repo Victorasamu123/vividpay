@@ -12,15 +12,17 @@ import airtel from "../../public/images/airtel.png"
 import glo from "../../public/images/1630540.png"
 import ninemobile from "../../public/images/download.jpg"
 import EnterpinAirtime from '../modals/airtimemodal/enterpin';
+import Info from '../modals/info';
 const Airtime = () => {
     const [openPin, setOPenPin] = useState<boolean>(false);
-    
+    const [pinDone, setpinDone] = useState<boolean>(false);
     const handlePinOpen = ()=>{
         setOPenPin(true);
     }
 
     const handleClosePin = () =>{
         setOPenPin(false);
+        setpinDone(true);
     }
      return (
     <>
@@ -72,6 +74,7 @@ const Airtime = () => {
         </div>
         {openPin && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
         <EnterpinAirtime isOpen={openPin} onClose={handleClosePin} setPinOpen={setOPenPin}/>
+        <Info isOpen={pinDone} pinDone={pinDone} setpinDone={setpinDone}/>
        </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>

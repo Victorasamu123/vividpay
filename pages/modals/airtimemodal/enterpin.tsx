@@ -15,7 +15,7 @@ const EnterpinAirtime:React.FC<ModalProps> = ({isOpen,setPinOpen,onClose}) => {
         <div className=' flex justify-center items-center flex-col '>
        <h3 className='text-[30px] font-medium mb-4'>Enter pin</h3>
          <input type="text" className='lg:w-[70%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-2' placeholder='Enter card number'/>
-         <button className='block mt-[15px] lg:w-[70%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Send</button>
+         <button className='block mt-[15px] lg:w-[70%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={onClose}>Send</button>
          </div>
          </div>
      </div>
