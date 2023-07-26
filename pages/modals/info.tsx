@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react'
 import success from "../../public/images/success.png"
 import fail from "../../public/images/fail.png"
-
 interface ModalProps {
     isOpen:boolean;
     pinDone:boolean;
