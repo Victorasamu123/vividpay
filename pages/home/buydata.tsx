@@ -48,7 +48,14 @@ const BuyData = () => {
            <Image src={ninemobile} alt='' width={60}/>
         </div>
         <input type="text" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5' placeholder='Phone number should be at least 10 characters'/>
-         <select name="" id="" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5'></select>
+         <select name="" id="" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] text-[#67656E] text-[14px] font-semibold mb-5'>
+            {
+                myAmountForData.map((item,index)=>(
+                    <option value="" key={index}>{item.amount}</option>
+                ))
+            }
+         </select>
+         <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
         </div>
        </div>
          {/* {third section of dashboard} */}
