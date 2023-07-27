@@ -29,7 +29,7 @@ const Dstv: React.FC<ModalProps> = ({isOpen,onClose,setIsDstvOpen}) => {
        <select name="" id="" className='lg:w-[80%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-10'>
         {
             DstvPlanArray.map((item,index)=>(
-                <option value="">{item.plan}     {item.amount}</option>
+                <option value="" key={index}>{item.plan}     {item.amount}</option>
             ))
         }
        </select>
