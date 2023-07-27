@@ -19,13 +19,19 @@ import Dstv from '../modals/billsFolder/dstv';
 const PayBills = () => {
     // dstv states
     const [isDstvOpen, setIsDstvOpen]= useState<boolean>(false);
-    
+    const [pinOpen, setPinOpen] = useState<boolean>(false);
+    const [pinDone, setpinDone] = useState<boolean>(false);
    // dstv function
     const handleDstvOpen=()=>{
         setIsDstvOpen(true);
     }
     const handleDstvClose=()=>{
         setIsDstvOpen(false);
+        setPinOpen(true);
+    }
+    const closePinModal=()=>{
+        setPinOpen(false);
+        setpinDone(true)
     }
 
   return (
@@ -83,7 +89,8 @@ const PayBills = () => {
           </div>
           {isDstvOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
           <Dstv isOpen={isDstvOpen} onClose={handleDstvClose} setIsDstvOpen={setIsDstvOpen}/>
-          
+          <EnterpinAirtime isOpen={pinOpen} setPinOpen={setPinOpen} onClose={closePinModal}/>
+          <Info setpinDone={setpinDone} isOpen={pinDone} pinDone={pinDone}/>
         </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>

@@ -35,7 +35,7 @@ const Dstv: React.FC<ModalProps> = ({isOpen,onClose,setIsDstvOpen}) => {
        </select>
          <input type="text" className='lg:w-[80%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-10' placeholder='Enter IUC number of decoder'/>
          <input type="text" className='lg:w-[80%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-10' placeholder='Enter account owner of decoder'/>
-         <button className='block mt-[15px] lg:w-[80%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Proceed</button>
+         <button className='block mt-[15px] lg:w-[80%] md:w-[70%] w-[75%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={onClose}>Proceed</button>
          </div>
          </div>
      </div>
