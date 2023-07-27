@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
 import Funding from '../modals/funding';
-import Enterpin from '../modals/enterpin';
+import EnterpinAirtime from '../modals/airtimemodal/enterpin';
 import Info from '../modals/info';
 import dstv from "../../public/images/DStv_Logo_2012.png"
 import gotv from "../../public/images/GoTv.png"
@@ -83,6 +83,7 @@ const PayBills = () => {
           </div>
           {isDstvOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
           <Dstv isOpen={isDstvOpen} onClose={handleDstvClose} setIsDstvOpen={setIsDstvOpen}/>
+          
         </div>
          {/* {third section of dashboard} */}
         <ThirdBar/>
