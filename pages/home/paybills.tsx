@@ -19,6 +19,8 @@ import Dstv from '../modals/billsFolder/dstv';
 const PayBills = () => {
     // dstv states
     const [isDstvOpen, setIsDstvOpen]= useState<boolean>(false);
+    // gotv states
+    const [isGotvOpen, setIsGotvOpen]= useState<boolean>(false);
     const [pinOpen, setPinOpen] = useState<boolean>(false);
     const [pinDone, setpinDone] = useState<boolean>(false);
    // dstv function
@@ -33,7 +35,12 @@ const PayBills = () => {
         setPinOpen(false);
         setpinDone(true)
     }
+  // gotv function
 
+  const handleGoTv=()=>{
+    setIsGotvOpen(true);
+
+  }
   return (
     <>
      <Head>
@@ -71,7 +78,7 @@ const PayBills = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
             {/* gotv */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' >
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleGoTv}>
             <div className='flex items-center'>
             <Image src={gotv} alt='vividpaylogo' width={40}/>
              <p className='text-center ml-3 font-medium text-[19px]'>GOTV</p>

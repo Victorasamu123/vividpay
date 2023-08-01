@@ -26,7 +26,7 @@ const GoTv:React.FC<ModalProps> = ({isOpen,onClose,setIsGotvOpen}) => {
             <MdCancel style={iconStyle}/>
           </div>
         <div className=' flex justify-center items-center flex-col '>
-       <h3 className='text-[30px] font-medium mb-4 flex'><Image src={gotv} alt='lee moe' width={50}/> DSTV</h3>
+       <h3 className='text-[30px] font-medium mb-4 flex'><Image src={gotv} alt='lee moe' width={50}/> GoTV</h3>
        <select name="" id="" className='lg:w-[80%] md:w-[70%] w-[75%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-10'>
         {
             GoTvPackage.map((item,index)=>(
