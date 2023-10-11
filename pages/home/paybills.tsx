@@ -16,13 +16,19 @@ import gotv from "../../public/images/GoTv.png"
 import startimes from "../../public/images/startimes-logo.png"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import Dstv from '../modals/billsFolder/dstv';
+import GoTv from '../modals/billsFolder/gotv';
+import Startimes from '../modals/billsFolder/startimes';
+Startimes
 const PayBills = () => {
     // dstv states
     const [isDstvOpen, setIsDstvOpen]= useState<boolean>(false);
     // gotv states
     const [isGotvOpen, setIsGotvOpen]= useState<boolean>(false);
+    //
     const [pinOpen, setPinOpen] = useState<boolean>(false);
     const [pinDone, setpinDone] = useState<boolean>(false);
+    // startimes
+    const [isStarTimesOpen, setIsStarTimesOpen] = useState<boolean>(false);
    // dstv function
     const handleDstvOpen=()=>{
         setIsDstvOpen(true);
@@ -39,7 +45,18 @@ const PayBills = () => {
 
   const handleGoTv=()=>{
     setIsGotvOpen(true);
-
+  }
+  const handleGoTvClose=()=>{
+    setIsGotvOpen(false);
+    setPinOpen(true);
+  }
+  // startimes function
+  const handleStartimes =()=>{
+    setIsStarTimesOpen(true);
+  }
+  const handleStartimesClose =()=>{
+    setIsStarTimesOpen(false);
+    setPinOpen(true);
   }
   return (
     <>
@@ -86,7 +103,7 @@ const PayBills = () => {
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
             {/* startimes */}
-            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl'>
+            <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleStartimes}>
             <div className='flex items-center'>
             <Image src={startimes} alt='vividpaylogo' width={40}/>
              <p className='text-center ml-3 font-medium text-[19px]'>Startimes</p>
@@ -96,6 +113,8 @@ const PayBills = () => {
           </div>
           {isDstvOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
           <Dstv isOpen={isDstvOpen} onClose={handleDstvClose} setIsDstvOpen={setIsDstvOpen}/>
+          <GoTv isOpen={isGotvOpen} onClose={handleGoTvClose} setIsGotvOpen={setIsGotvOpen}/>
+          <Startimes isOpen={isStarTimesOpen} onClose={handleStartimesClose} setIsStarTimesOpen={setIsStarTimesOpen}/>
           <EnterpinAirtime isOpen={pinOpen} setPinOpen={setPinOpen} onClose={closePinModal}/>
           <Info setpinDone={setpinDone} isOpen={pinDone} pinDone={pinDone}/>
         </div>
