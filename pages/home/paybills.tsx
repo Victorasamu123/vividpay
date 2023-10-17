@@ -13,7 +13,7 @@ import EnterpinAirtime from '../modals/airtimemodal/enterpin';
 import Info from '../modals/info';
 import dstv from "../../public/images/DStv_Logo_2012.png"
 import gotv from "../../public/images/GoTv.png"
-import startimes from "../../public/images/startimes-logo.png"
+import startimes from "../../public/images/star-removebg-preview.png"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import Dstv from '../modals/billsFolder/dstv';
 import GoTv from '../modals/billsFolder/gotv';
@@ -105,7 +105,7 @@ const PayBills = () => {
             {/* startimes */}
             <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleStartimes}>
             <div className='flex items-center'>
-            <Image src={startimes} alt='vividpaylogo' width={40}/>
+            <Image src={startimes} alt='vividpaylogo' width={60}/>
              <p className='text-center ml-3 font-medium text-[19px]'>Startimes</p>
             </div>
             <AiOutlineArrowRight className='text-[25px]'/>

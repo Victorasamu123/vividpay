@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdCancel } from "react-icons/md";
-import startimes from "../../../public/images/startimes-logo.png"
+import startimes from "../../../public/images/star-removebg-preview.png"
 import Image from 'next/image';
 import StartimesPlanArray from '@/components/startimes';
 StartimesPlanArray;
