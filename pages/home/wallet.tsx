@@ -8,11 +8,25 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
+import Opennewwallet from '../modals/walletModal/opennewwallet';
+import Enterpin from '../modals/sendMoneyModal/enterpin';
+import Info from '../modals/sendMoneyModal/info';
+
 const Wallet = () => {
   // for creating new wallet
   const [isNewWalletOpen, setisNewWalletOpen] = useState<boolean>(false)
   const [pinOpen, setpinOpen] = useState<boolean>(false);
   const [info, setinfo] = useState<boolean>(false);
+
+  // display function
+  const handleWalletOpen =()=>{
+    setisNewWalletOpen(true);
+  };
+
+  const handleWalletClose = () => {
+    setisNewWalletOpen(false);
+  };
+  
   return (
     <>
       <Head>
@@ -39,12 +53,17 @@ const Wallet = () => {
         <div  id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex flex-col items-center'>
         <div className='w-[80%] flex justify-between'>
           <h1 className='text-[36px] font-apple font-medium'>Wallet</h1>
-          <button className='block lg:w-[20%] md:w-[40%] w-[40%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Add Wallet</button>
+          <button className='block lg:w-[20%] md:w-[40%] w-[40%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={handleWalletOpen}>Add Wallet</button>
         </div>
         {/* displayer of available wallets */}
         <div className='mt-[150px]'>
           <p className='text-[26px] font-apple font-medium'>No available Wallets</p>
         </div>
+         {/* modal area */}
+         {isNewWalletOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+         <Opennewwallet isOpen={isNewWalletOpen} onClose={handleWalletClose} setWallet={setisNewWalletOpen} pinOpen={pinOpen} setpinOpen={setpinOpen}/>
+         <Enterpin isOpen={pinOpen} setpinOpen={setpinOpen} info={info} setinfo={setinfo}/>
+          <Info isOpen={info} setisOpen={setinfo}/>
         </div>
         {/* {third section of dashboard} */}
         <ThirdBar/>
