@@ -18,7 +18,7 @@ const Wallet = () => {
        <link rel="icon" href="/favicon.ico" /> 
     </Head>
     <main>
-        <section>
+        <section className='w-full h-full bg-[#F1F1F1] pb-5'>
         <Headers/>
         <div className='lg:flex md:block block'>
         <div className='lg:hidden md:flex flex md:items-center items-center md:mt-5 mt-5 md:ml-[5%] ml-[5%]'>
@@ -32,9 +32,18 @@ const Wallet = () => {
         {/*sidebar menu code*/}
         <SideBar/>
         {/* middle account info code */}
-        <div  id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex justify-center flex-col items-center'>
-        <div>wallet</div>
+        <div  id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex flex-col items-center'>
+        <div className='w-[80%] flex justify-between'>
+          <h1 className='text-[36px] font-apple font-medium'>Wallet</h1>
+          <button className='block lg:w-[20%] md:w-[40%] w-[40%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans'>Add Wallet</button>
         </div>
+        {/* displayer of available wallets */}
+        <div className='mt-[150px]'>
+          <p className='text-[26px] font-apple font-medium'>No available Wallets</p>
+        </div>
+        </div>
+        {/* {third section of dashboard} */}
+        <ThirdBar/>
         </div>
         </section>
     </main>
