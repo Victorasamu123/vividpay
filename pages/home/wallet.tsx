@@ -9,6 +9,10 @@ import { useRouter } from 'next/router';
 import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
 const Wallet = () => {
+  // for creating new wallet
+  const [isNewWalletOpen, setisNewWalletOpen] = useState<boolean>(false)
+  const [pinOpen, setpinOpen] = useState<boolean>(false);
+  const [info, setinfo] = useState<boolean>(false);
   return (
     <>
       <Head>
