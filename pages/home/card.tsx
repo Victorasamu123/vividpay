@@ -8,7 +8,23 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
+import Enterpin from '../modals/sendMoneyModal/enterpin';
+import Info from '../modals/sendMoneyModal/info';
+
 const Card = () => {
+    // for creating new card
+    const [isNewCardOpen, setisNewCardOpen] = useState<boolean>(false);
+    const [pinOpen, setpinOpen] = useState<boolean>(false);
+    const [info, setinfo] = useState<boolean>(false);
+
+    //display function
+    const handleCardOPen = () => {
+        setisNewCardOpen(true);
+    }
+
+    const handleCardClose = () => {
+        setisNewCardOpen(false);
+    }
   return (
     <>
      <Head>
