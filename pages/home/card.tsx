@@ -10,7 +10,7 @@ import SideBar from '@/components/home/sidebar';
 import ThirdBar from '@/components/home/thirdbar';
 import Enterpin from '../modals/sendMoneyModal/enterpin';
 import Info from '../modals/sendMoneyModal/info';
-
+import Opennewcard from '../modals/cardModal/opennewcard';
 const Card = () => {
     // for creating new card
     const [isNewCardOpen, setisNewCardOpen] = useState<boolean>(false);
@@ -51,13 +51,20 @@ const Card = () => {
         <div  id='two' className='lg:mt-[2%] lg:w-[53%] lg:h-[600px] lg:ml-[2.3%] md:mt-[2%] md:w-[90%] md:h-[700px]  md:ml-[5%] mt-[2%] w-[90%] ml-[5%] h-[500px] rounded-xl flex flex-col items-center'>
         <div className='w-[80%] flex justify-between'>
           <h1 className='lg:text-[36px] md:text-[36px] text-[22px] font-apple font-medium '>Virtual Cards</h1>
-          <button className='block lg:w-[20%] md:w-[40%] w-[30%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[12px] lg:text-[18px] md:text-[18px] font-semibold font-sans'>Create Card</button>
+          <button className='block lg:w-[20%] md:w-[40%] w-[30%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[12px] lg:text-[18px] md:text-[18px] font-semibold font-sans' onClick={handleCardOPen}>Create Card</button>
         </div>
         {/* displayer of available cards */}
         <div className='mt-[150px]'>
           <p className='text-[26px] font-apple font-medium'>No available Cards</p>
         </div>
+         {/* modal area */}
+         {isNewCardOpen && <div className="fixed inset-0 bg-gray-800 opacity-50"></div>}
+         <Opennewcard isOpen={isNewCardOpen} onClose={handleCardClose} setCard={setisNewCardOpen} pinOpen=
+         {pinOpen} setpinOpen={setpinOpen}/>
+         <Enterpin isOpen={pinOpen} setpinOpen={setpinOpen} info={info} setinfo={setinfo}/>
+         <Info isOpen={info} setisOpen={setinfo}/>
         </div>
+
         {/* {third section of dashboard} */}
         <ThirdBar/>
         </div>
