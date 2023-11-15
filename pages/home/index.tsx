@@ -68,6 +68,9 @@ const Index = () => {
       console.log(result.data.userDetails.Lastname);
       if(result.data.status === false){
          setLoading(true);
+         setTimeout(() => {
+            router.push("/auth/signin")
+          }, 3000);
       }else{
          setName(result.data.userDetails.Lastname);
          setBalance(result.data.userDetails.AccountBalance);
