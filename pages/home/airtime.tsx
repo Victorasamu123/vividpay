@@ -22,10 +22,12 @@ const Airtime = () => {
     const [openPin, setOPenPin] = useState<boolean>(false);
     const [pinDone, setpinDone] = useState<boolean>(false);
     const [Loading, setLoading]= useState<boolean>(true);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
     let token= ""
     let userId=""
     let Email=""
-    const priceObject = { fif:50, hun:100, twoh:200, fivh:500, onet:1000, twot:2000 }
+    const priceObject = { fif:"50", hun:"100", twoh:"200", fivh:"500", onet:"1000", twot:"2000" }
     useEffect(() => {
       verifyToken()
       getUserDetails()
@@ -79,6 +81,12 @@ const Airtime = () => {
         setOPenPin(false);
         setpinDone(true);
     }
+    const handleImageSelect = (imageName: string) => {
+        setSelectedImage(imageName);
+    };
+    const handlePriceSelect = (currentPrice: string) => {
+        setSelectedPrice(currentPrice);
+    };
      return (
     <>
      <Head>
@@ -112,20 +120,21 @@ const Airtime = () => {
         <div className='w-[100%] flex justify-center items-center flex-col'>
         <input type="text" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5' placeholder='Phone number should be at least 10 characters'/>
         <div className='flex justify-between items-center lg:w-[50%] md:w-[90%] w-[90%] mb-5'>
-           <Image src={mtn} alt='' width={60} className='border-[6px] border-[#623ECA]'/>
-           <Image src={airtel} alt='' width={60}/>
-           <Image src={glo} alt='' width={60}/>
-           <Image src={ninemobile} alt='' width={60}/>
+           <Image src={mtn} alt='mtn' width={60} onClick={() => handleImageSelect('mtn')}
+            style={{ border: selectedImage === 'mtn' ? '5px solid #623ECA' : 'none' }}/>
+           <Image src={airtel} alt='airtel' width={60}   onClick={() => handleImageSelect('airtel')}  style={{ border: selectedImage === 'airtel' ? '5px solid #623ECA' : 'none' }}/>
+           <Image src={glo} alt='glo' width={60}   onClick={() => handleImageSelect('glo')}  style={{ border: selectedImage === 'glo' ? '5px solid #623ECA' : 'none' }}/>
+           <Image src={ninemobile} alt='ninemob' width={60}   onClick={() => handleImageSelect('ninemob')}  style={{ border: selectedImage === 'ninemob' ? '5px solid #623ECA' :'none' }}/>
         </div>
         <div className='flex justify-between items-center lg:w-[50%] md:w-[90%] w-[90%] mb-5'>
-         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦{priceObject.fif}</p>
-         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦{priceObject.hun}</p>
-         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦{priceObject.twoh}</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple' onClick={()=>handlePriceSelect(priceObject.fif)} style={{ border: selectedPrice === priceObject.fif ? '5px solid #623ECA' :'none' }}>₦{priceObject.fif}</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple' onClick={()=>handlePriceSelect(priceObject.hun)} style={{ border: selectedPrice === priceObject.hun ? '5px solid #623ECA' :'none' }}>₦{priceObject.hun}</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple' onClick={()=>handlePriceSelect(priceObject.twoh)} style={{ border: selectedPrice === priceObject.twoh ? '5px solid #623ECA' :'none' }}>₦{priceObject.twoh}</p>
         </div>
         <div className='flex justify-between items-center lg:w-[50%] md:w-[90%] w-[90%] mb-5'>
-         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦{priceObject.fivh}</p>
-         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦{priceObject.onet}</p>
-         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple'>₦{priceObject.twot}</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple' onClick={()=>handlePriceSelect(priceObject.fivh)} style={{ border: selectedPrice === priceObject.fivh ? '5px solid #623ECA' :'none' }}>₦{priceObject.fivh}</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple' onClick={()=>handlePriceSelect(priceObject.onet)} style={{ border: selectedPrice === priceObject.onet ? '5px solid #623ECA' :'none' }}>₦{priceObject.onet}</p>
+         <p className='bg-white w-[30%] h-[50px] flex justify-center items-center rounded-xl shadow-sm text-[26px] font-medium font-apple' onClick={()=>handlePriceSelect(priceObject.twot)} style={{ border: selectedPrice === priceObject.twot ? '5px solid #623ECA' :'none' }}>₦{priceObject.twot}</p>
         </div>
         <input type="text" className='lg:w-[50%] md:w-[90%] w-[90%] h-[50px] bg-[#F3F3F3] rounded-[4px] focus:outline-[#623ECA] border-[#623ECA] border-[2px] pl-2 text-[#67656E] text-[14px] font-semibold mb-5' placeholder='Enter amount to purchase'/>
         <button className='block lg:w-[50%] md:w-[90%] w-[90%] h-[55px] bg-[#623ECA] rounded-[4px] text-[#FFFFFF] text-[18px] font-semibold font-sans' onClick={handlePinOpen}>Proceed</button>
