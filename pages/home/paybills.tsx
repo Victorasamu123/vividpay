@@ -86,7 +86,7 @@ const PayBills = () => {
             <h1 className='text-[26px] font-apple  font-medium'>Pay Bills</h1>
             </div>
           <div className='w-[100%] flex justify-center items-center flex-col'>
-            {/* //dstv */}
+            {/* DSTV */}
             <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleDstvOpen}>
             <div className='flex items-center' >
              <Image src={dstv} alt='vividpaylogo' width={40}/>
@@ -94,7 +94,7 @@ const PayBills = () => {
             </div>
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
-            {/* gotv */}
+            {/* GOTV */}
             <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleGoTv}>
             <div className='flex items-center'>
             <Image src={gotv} alt='vividpaylogo' width={40}/>
@@ -102,7 +102,7 @@ const PayBills = () => {
             </div>
             <AiOutlineArrowRight className='text-[25px]'/>
             </div>
-            {/* startimes */}
+            {/* STARTIMES */}
             <div className='bg-white lg:w-[50%] md:w-[90%] w-[90%] h-[80px] shadow-sm mb-5 cursor-pointer flex items-center justify-between pl-6 pr-6 rounded-xl' onClick={handleStartimes}>
             <div className='flex items-center'>
             <Image src={startimes} alt='vividpaylogo' width={60}/>
